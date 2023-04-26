@@ -3,11 +3,8 @@
 
 
 Coin::Coin(Game *game, glm::vec3 pos, glm::vec3 dim):
-    GameObject(game, pos){
-        
+    GameObject(game, pos, dim){
     material.setDiffuseColor(ofColor::yellow);
-    collider.setPosition(pos);
-    collider.set(dim.x, dim.y, dim.z);
 }
 Coin::~Coin(){
     
@@ -22,13 +19,9 @@ void Coin::draw(){
     
     material.begin();
     {
-        collider.draw();
+        collider->draw();
     }
     material.end();
-}
-void Coin::drawDebug(){
-    
-    collider.drawWireframe();
 }
 
 void Coin::receiveCarCollision(Player *car){

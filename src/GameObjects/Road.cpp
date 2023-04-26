@@ -26,6 +26,3 @@ void Road::draw(){
     material.end();
 }
 
-void Road::drawDebug(){
-    plane.drawWireframe();
-}

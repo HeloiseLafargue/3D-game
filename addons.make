@@ -1,2 +1,3 @@
 ofxAssimpModelLoader
+ofxBullet
 ofxGui

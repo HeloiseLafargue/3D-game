@@ -5,10 +5,12 @@
 #include "ofMain.h"
 
 class GameObject;
+class CollisionEngine;
 
 class GameObjectContainer{
     
     vector<GameObject *> gameObjects;
+    CollisionEngine *collisionEngine;
 public:
     GameObjectContainer();
     ~GameObjectContainer();

@@ -22,6 +22,7 @@ public:
     int ROAD_WIDTH;
     
     Game();
+    ~Game();
     void init();
     void update();
     void draw();
@@ -35,5 +36,6 @@ public:
     void addGameObject(GameObject *gameobject);
     
     float getEllapsedTime();
+    
 };
 #endif

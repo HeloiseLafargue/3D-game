@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "Game.h"
 
-Player::Player(Game *game):GameObject(game, glm::vec3(0, 0, 0)){
+Player::Player(Game *game):GameObject(game, glm::vec3(100)){
     
     material.setDiffuseColor(ofColor::blue);
     
@@ -10,11 +10,6 @@ Player::Player(Game *game):GameObject(game, glm::vec3(0, 0, 0)){
     faro.setSpotlight();
     faro.move(0, 0, 50);
     faro.rotateDeg(-200, 1, 0, 0);
-    
-    collider.setParent(transform);
-    collider.set(100);
-    
-    
 }
 
 Player::~Player(){}
@@ -45,13 +40,14 @@ void Player::draw(){
     
     material.begin();
     {
-        collider.draw();
+        collider->draw();
     }
     material.end();
 }
 
 void Player::drawDebug(){
-    collider.drawWireframe();
+    collider->drawDebug();
+    
     transform.transformGL();
     ofDrawAxis(100);
     transform.restoreTransformGL();

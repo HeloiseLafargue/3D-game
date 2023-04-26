@@ -9,6 +9,10 @@ void ofApp::setup(){
     game->setState(new PlayState(game));
 }
 
+ofApp::~ofApp(){
+    delete game;
+}
+
 //--------------------------------------------------------------
 void ofApp::update(){
     game->currentState()->update();
