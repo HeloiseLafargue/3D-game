@@ -5,13 +5,13 @@
 #include "ofMain.h"
 
 class GameObject;
-class ofxBulletBox;
+class ofxBulletRigidBody;
 
 class BoxCollider : public ofBoxPrimitive{
     GameObject *gameObject;
     bool bColliding;
 public:
-    ofxBulletBox *collisionObject;
+    ofxBulletRigidBody *collisionObject;
     BoxCollider(GameObject *gameObject);
     ~BoxCollider();
     bool collide(BoxCollider *other);

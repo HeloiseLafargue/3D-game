@@ -12,6 +12,7 @@ public:
     ~Road();
     
     void draw() override;
+    void drawDebug() override;
     
 };
 

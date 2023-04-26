@@ -32,6 +32,7 @@ public:
     void steerRight();
     void accelerate();
     void toggleLight();
+    void shoot();
     void brake();
     void stop();
     void addCoins(int n = 1);

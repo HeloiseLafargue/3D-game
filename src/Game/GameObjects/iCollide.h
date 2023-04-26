@@ -17,6 +17,7 @@ class iCollide{
     public:
     
     virtual void receiveCarCollision(Player *car) {};
+    virtual void receiveBulletCollision(GameObject *bullet) {};
         
     BoxCollider* getCollider(){
         return collider;

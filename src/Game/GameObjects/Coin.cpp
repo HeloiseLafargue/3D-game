@@ -1,5 +1,6 @@
 #include "Coin.h"
 #include "Player.h"
+#include "Game.h"
 
 
 Coin::Coin(Game *game, glm::vec3 pos, glm::vec3 dim):
@@ -27,5 +28,10 @@ void Coin::draw(){
 void Coin::receiveCarCollision(Player *car){
     car->addCoins(5);
     bAlive = false;
-    
+}
+
+void Coin::receiveBulletCollision(GameObject *bullet){
+    bullet->kill();
+    kill();
+    game->getPlayer()->addCoins(1000);
 }

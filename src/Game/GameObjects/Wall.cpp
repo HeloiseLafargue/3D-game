@@ -2,7 +2,6 @@
 #include "Player.h"
 
 Wall::Wall(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
-  
     material.setEmissiveColor(ofColor::darkorange);
 }
 Wall::~Wall(){}
@@ -21,3 +20,7 @@ void Wall::draw(){
 void  Wall::receiveCarCollision(Player *car){
     car->stop();
 }
+
+void  Wall::receiveBulletCollision(GameObject *bullet){
+    bullet->kill();
+};

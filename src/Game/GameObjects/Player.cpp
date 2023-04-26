@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Game.h"
+#include "Bullet.h"
 
 Player::Player(Game *game):GameObject(game, glm::vec3(100)){
     
@@ -75,7 +76,6 @@ void Player::brake(){
 
 void Player::stop(){
     speed = 0;
-    transform.setPosition(prevPos);
 }
 
 void Player::toggleLight(){
@@ -92,4 +92,7 @@ void Player::addCoins(int n){
 
 int Player::getCoins(){
     return coins;
+}
+void Player::shoot(){
+    game->addGameObject(new Bullet(game, transform));
 }

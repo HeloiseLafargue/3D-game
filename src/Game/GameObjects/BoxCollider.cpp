@@ -16,7 +16,8 @@ bool BoxCollider::collide(BoxCollider *other){
 void BoxCollider::drawDebug(){
     ofPushStyle();
     drawWireframe();
-    collisionObject->draw();
+    // NOTE uncomment to see bullet collider
+  //  collisionObject->draw();
     ofPopStyle();
     
 }

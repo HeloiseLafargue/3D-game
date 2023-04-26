@@ -5,6 +5,7 @@
 GameObject::GameObject(Game *game, glm::vec3 pos): game(game){
     init(pos);
 }
+
 GameObject::GameObject(Game *game, glm::vec3 pos, glm::vec3 dim): game(game){
     init(pos);
     collider->set(dim.x, dim.y, dim.z);
@@ -17,6 +18,7 @@ void GameObject::init(glm::vec3 pos){
     transform.setPosition(pos);
     bAlive = true;
 }
+
 GameObject::~GameObject(){
     delete collider;
 }

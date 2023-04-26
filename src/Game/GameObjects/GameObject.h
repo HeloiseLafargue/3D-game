@@ -27,6 +27,7 @@ public:
     virtual void update() {};
     virtual void checkCollisions(){};
     bool isAlive();
+    void kill(){bAlive = false;};
 };
 
 #endif 

@@ -48,4 +48,6 @@ void PlayState::keyPressed(int key){
         game->getPlayer()->toggleLight();
     if(key == 'd')
         game->toggleDebug();
+    if(key == ' ')
+        game->getPlayer()->shoot();
 }

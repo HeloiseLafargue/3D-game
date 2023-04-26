@@ -6,6 +6,7 @@ CollisionEngine::CollisionEngine(vector <GameObject*> &colliders):colliders(coll
     world.setup();
     world.setGravity( ofVec3f(0, 0, 0) );
     world.disableGrabbing();
+    ofAddListener(world.COLLISION_EVENT, this, &CollisionEngine::onCollision);
 };
 
 CollisionEngine::~CollisionEngine(){};
@@ -14,7 +15,7 @@ CollisionEngine::~CollisionEngine(){};
 void CollisionEngine::add(GameObject *g){
     ofxBulletBox* box = new ofxBulletBox();
     BoxCollider *b = g->getCollider();
-    box->init(ofBtGetBoxCollisionShape(b->getWidth(), b->getHeight(),  b ->getDepth()));
+    box->init(ofBtGetBoxCollisionShape(b->getWidth(), b->getHeight(),  b->getDepth()));
     box->create(world.world, b->getGlobalPosition());
     box->setActivationState( DISABLE_DEACTIVATION );
     box->add();
@@ -31,14 +32,11 @@ void CollisionEngine::update(){
         b->collisionObject->getRigidBody()->getMotionState()->getWorldTransform(transform);
         transform.setFromOpenGLMatrix(glm::value_ptr(b->getGlobalTransformMatrix()));
         b->collisionObject->getRigidBody()->getMotionState()->setWorldTransform(transform);
-        b->setColliding(false);
     }
-    world.update();
  
 };
 
 vector<GameObject *> CollisionEngine::getCollisions(GameObject *g){
-    vector<GameObject *> collisions;
     struct    MyContactResultCallback : public btCollisionWorld::ContactResultCallback
         {
             bool bCollison;
@@ -52,6 +50,8 @@ vector<GameObject *> CollisionEngine::getCollisions(GameObject *g){
             }
         };
 
+    vector<GameObject *> collisions;
+    world.update();
     auto cw = world.getWorld()->getCollisionWorld();
     
     for(auto other: colliders){
@@ -74,3 +74,7 @@ void CollisionEngine::remove(GameObject *g){
     g->getCollider()->collisionObject->remove();
 };
 
+
+void  CollisionEngine::onCollision(ofxBulletCollisionData& cdata){
+   
+}

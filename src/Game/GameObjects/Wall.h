@@ -12,6 +12,7 @@ public:
     
     void draw() override;
     void receiveCarCollision(Player *car) override;
+    void receiveBulletCollision(GameObject *bullet) override;
     
 };
 
