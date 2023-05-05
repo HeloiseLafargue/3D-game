@@ -1,6 +1,7 @@
 #include "CollisionEngine.h"
 #include "GameObject.h"
 #include "Game.h"
+#define BT_USE_DOUBLE_PRECISION
 
 CollisionEngine::CollisionEngine(vector <GameObject*> &colliders):colliders(colliders){
     world.setup();
@@ -26,6 +27,7 @@ void CollisionEngine::add(GameObject *g){
     if(!g->isFixed)
         box->activate();
     b->collisionObject = box;
+   
     updateObject(g);
     
 };

@@ -25,6 +25,8 @@ void PlayState::draw(){
     {
         ofTranslate(10, 0);
         ofTranslate(0, 20);
+        ofDrawBitmapString("Fps: " + ofToString(ofGetFrameRate()), 0, 0);
+        ofTranslate(0, 20);
         ofDrawBitmapString(name, 0, 0);
         ofTranslate(0, 20);
         ofDrawBitmapString("Time: " + ofToString(game->getEllapsedTime(), 2), 0, 0);
