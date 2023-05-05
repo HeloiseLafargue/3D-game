@@ -7,11 +7,11 @@ class Game;
 class GameObject;
 
 class CollisionEngine{    
-    void onCollision(ofxBulletCollisionData& cdata);
     ofxBulletWorldRigid            world;
     vector <GameObject*> &colliders;
     GameObject *targetObject;
     
+    void updateObject(GameObject*);
 public:
     CollisionEngine(vector <GameObject*> &colliders);
     ~CollisionEngine();

@@ -76,6 +76,7 @@ void Player::brake(){
 
 void Player::stop(){
     speed = 0;
+    transform.setPosition(prevPos);
 }
 
 void Player::toggleLight(){

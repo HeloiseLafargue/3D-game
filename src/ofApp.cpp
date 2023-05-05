@@ -7,6 +7,7 @@
 void ofApp::setup(){
     game = new Game();
     game->setState(new PlayState(game));
+    ofSetFrameRate(60);
 }
 
 ofApp::~ofApp(){

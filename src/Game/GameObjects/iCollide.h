@@ -7,7 +7,7 @@
 #include "BoxCollider.h"
 
 class Player;
-
+class Pedestrian;
 
 class iCollide{
     
@@ -18,6 +18,7 @@ class iCollide{
     
     virtual void receiveCarCollision(Player *car) {};
     virtual void receiveBulletCollision(GameObject *bullet) {};
+    virtual void receivePedestrianCollision(Pedestrian *pedestrian) {};
         
     BoxCollider* getCollider(){
         return collider;

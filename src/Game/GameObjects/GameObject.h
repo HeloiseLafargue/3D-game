@@ -28,6 +28,8 @@ public:
     virtual void checkCollisions(){};
     bool isAlive();
     void kill(){bAlive = false;};
+
+    bool isFixed = false;
 };
 
 #endif 

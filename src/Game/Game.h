@@ -17,6 +17,9 @@ class Game : public StateMachine{
     bool bPlayerFinish;
     float initTime;
     
+    ofSoundPlayer scream;
+
+    
 public:
     int ROAD_LENGTH;
     int ROAD_WIDTH;
@@ -36,6 +39,7 @@ public:
     void addGameObject(GameObject *gameobject);
     
     float getEllapsedTime();
+    void doScream();
     
 };
 #endif

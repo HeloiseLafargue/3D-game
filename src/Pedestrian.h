@@ -1,21 +1,27 @@
-#ifndef Coin_h
-#define Coin_h
+
+#ifndef Person_h
+#define Person_h
+
 #include "GameObject.h"
+
 #include "ofxAssimpModelLoader.h"
 
-class Coin : public GameObject{
-    
+class Pedestrian : public GameObject{
+    float speed = -5;
+    bool bTurned;
 public:
-    Coin(Game *game, glm::vec3 pos, glm::vec3 dim);
-    ~Coin();
+    Pedestrian(Game *game, glm::vec3 pos, glm::vec3 dim);
+    ~Pedestrian();
     
     void update() override;
     void draw() override;
     void receiveCarCollision(Player *car) override;
     void receiveBulletCollision(GameObject *bullet) override;
-  
+    
+    void checkCollisions() override;
+    void turn();
     ofxAssimpModelLoader model;
-
 };
 
-#endif /* Coin_h */
+
+#endif /* Person_h */

@@ -8,6 +8,7 @@ Game::Game(){
 
     generator = new GameObjectGenerator(this);
     bDebug = false;
+    scream.load("aaa.wav");
 }
 
 Game::~Game(){
@@ -31,7 +32,8 @@ void Game::init(){
     cam.setPosition(0, 300, -600);
     cam.setTarget(player->transform);
     cam.setParent(player->transform);
-    cam.disableMouseInput();
+    //cam.disableMouseInput();
+    cam.setFarClip(100000);
     
     gameObjects->add(player);
     generator->generateWorld();
@@ -89,4 +91,8 @@ void Game::setFinished(bool v){
 
 float Game::getEllapsedTime(){
     return ofGetElapsedTimef() - initTime;
+}
+
+void Game::doScream(){
+    scream.play();
 }

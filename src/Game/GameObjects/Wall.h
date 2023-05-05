@@ -3,6 +3,8 @@
 
 #include "GameObject.h"
 
+class Pedestrian;
+
 class Wall : public GameObject{
     
     
@@ -13,6 +15,7 @@ public:
     void draw() override;
     void receiveCarCollision(Player *car) override;
     void receiveBulletCollision(GameObject *bullet) override;
+    void receivePedestrianCollision(Pedestrian *pedestrian) override;
     
 };
 

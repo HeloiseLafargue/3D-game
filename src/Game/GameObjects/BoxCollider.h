@@ -17,6 +17,7 @@ public:
     bool collide(BoxCollider *other);
     void drawDebug();
     void setColliding(bool v){bColliding = true;};
+    
 };
 
 

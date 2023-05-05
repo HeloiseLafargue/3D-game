@@ -6,6 +6,9 @@
 Coin::Coin(Game *game, glm::vec3 pos, glm::vec3 dim):
     GameObject(game, pos, dim){
     material.setDiffuseColor(ofColor::yellow);
+        
+ 
+    
 }
 Coin::~Coin(){
     
@@ -13,10 +16,11 @@ Coin::~Coin(){
 
 
 void Coin::update(){
-    
+    model.update();
 }
 
 void Coin::draw(){
+   
     
     material.begin();
     {
@@ -27,7 +31,7 @@ void Coin::draw(){
 
 void Coin::receiveCarCollision(Player *car){
     car->addCoins(5);
-    bAlive = false;
+    kill();
 }
 
 void Coin::receiveBulletCollision(GameObject *bullet){
