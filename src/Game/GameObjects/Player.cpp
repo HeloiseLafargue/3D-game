@@ -71,7 +71,7 @@ void Player::accelerate(){
     speed += 0.1;
 }
 void Player::brake(){
-    speed -= 0.1;
+    speed -= 10;
 }
 
 void Player::stop(){
@@ -95,5 +95,8 @@ int Player::getCoins(){
     return coins;
 }
 void Player::shoot(){
-    game->addGameObject(new Bullet(game, transform));
+    if (coins > 0){
+        game->addGameObject(new Bullet(game, transform));
+        coins--;
+    }
 }

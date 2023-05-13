@@ -5,6 +5,7 @@
 #include "Wall.h"
 #include "Goal.h"
 #include "Coin.h"
+#include "Obstacle.h"
 #include "Pedestrian.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
@@ -81,11 +82,20 @@ void GameObjectGenerator::generateWorld(){
     goal->isFixed = true;
     game->addGameObject(goal);
     
+    for (int i=0; i < 25; i++){
+        auto coin = new Coin(game,
+            glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(50));
+        
+        game->addGameObject(coin);
+    }
     
-    auto coin = new Coin(game,
-        glm::vec3(0, -25, 500), glm::vec3(50));
+    for (int i=0; i < 25; i++){
+        auto obstacle = new Obstacle(game,
+            glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(100));
+        
+        game->addGameObject(obstacle);
+    }
     
-    game->addGameObject(coin);
     
     
     auto pedestrian = new Pedestrian(game,
