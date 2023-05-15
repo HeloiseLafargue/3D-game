@@ -2,6 +2,7 @@
 #define Wall_h
 
 #include "GameObject.h"
+#include "Barrera.h"
 
 class Pedestrian;
 
@@ -16,6 +17,8 @@ public:
     void receiveCarCollision(Player *car) override;
     void receiveBulletCollision(GameObject *bullet) override;
     void receivePedestrianCollision(Pedestrian *pedestrian) override;
+    void receiveBarreraCollision(Barrera* barrera) override;
+    void setColor(ofColor color);
     
 };
 

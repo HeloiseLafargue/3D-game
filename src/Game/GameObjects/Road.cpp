@@ -2,6 +2,7 @@
 
 #include "Road.h"
 #include "Game.h"
+#include "Barrera.h"
 
 Road::Road(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos){
     material.setDiffuseColor(ofColor::darkGrey);
@@ -29,3 +30,12 @@ void Road::draw(){
 void Road::drawDebug(){
     plane.drawWireframe();
 }
+
+ void Road::receiveBarreraCollision(Barrera* barrera){
+    barrera->turn();
+ }
+ 
+void Road::setColor(ofColor color){
+    material.setDiffuseColor(ofColor::darkGrey);
+}
+

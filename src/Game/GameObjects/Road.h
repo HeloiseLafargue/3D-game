@@ -2,6 +2,7 @@
 #define Road_h
 
 #include "GameObject.h"
+#include "Barrera.h"
 
 class Road : public GameObject{
     
@@ -13,6 +14,8 @@ public:
     
     void draw() override;
     void drawDebug() override;
+    void receiveBarreraCollision(Barrera* barrera) override;
+    void setColor(ofColor color);
     
 };
 

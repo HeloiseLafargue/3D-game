@@ -13,6 +13,7 @@ public:
     void draw() override;
     void receiveCarCollision(Player *car) override;
     void receiveBulletCollision(GameObject *bullet) override;
+    void setColor(ofColor color);
     ofxAssimpModelLoader model;
 
 };

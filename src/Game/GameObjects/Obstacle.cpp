@@ -39,3 +39,7 @@ void Obstacle::receiveBulletCollision(GameObject *bullet){
     kill();
 }
 
+void Obstacle::setColor(ofColor color){
+    material.setEmissiveColor(color);
+}
+
