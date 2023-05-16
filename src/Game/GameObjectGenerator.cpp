@@ -8,6 +8,7 @@
 #include "Obstacle.h"
 #include "Barrera.h"
 #include "Pedestrian.h"
+#include "Dirt.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -84,7 +85,7 @@ void GameObjectGenerator::generateWorld(){
     goal->isFixed = true;
     game->addGameObject(goal);
     
-    /*
+    
     // Coins
     for (int i=0; i < 25; i++){
         auto coin = new Coin(game,
@@ -100,7 +101,7 @@ void GameObjectGenerator::generateWorld(){
         
         game->addGameObject(obstacle);
     }
-    */
+    
     
     // Barrera
     auto wall_c = new Wall(game,
@@ -116,39 +117,39 @@ void GameObjectGenerator::generateWorld(){
     
     // Paso de peatones
     auto Paso1 = new Obstacle(game, glm::vec3(W/2 - 200, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso1 -> setColor(ofColor::white);
+    //Paso1 -> setColor(ofColor::white);
     game->addGameObject(Paso1);
     
     auto Paso2 = new Obstacle(game, glm::vec3(W/2 - 400, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso2 -> setColor(ofColor::white);
+    //Paso2 -> setColor(ofColor::white);
     game->addGameObject(Paso2);
     
     auto Paso3 = new Obstacle(game, glm::vec3(W/2 - 600, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso3 -> setColor(ofColor::white);
+    //Paso3 -> setColor(ofColor::white);
     game->addGameObject(Paso3);
     
     auto Paso4 = new Obstacle(game, glm::vec3(W/2 - 800, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso4 -> setColor(ofColor::white);
+    //Paso4 -> setColor(ofColor::white);
     game->addGameObject(Paso4);
     
     auto Paso5 = new Obstacle(game, glm::vec3(W/2 - 1000, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso5 -> setColor(ofColor::white);
+    //Paso5 -> setColor(ofColor::white);
     game->addGameObject(Paso5);
     
     auto Paso6 = new Obstacle(game, glm::vec3(W/2 - 1200, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso6 -> setColor(ofColor::white);
+    //Paso6 -> setColor(ofColor::white);
     game->addGameObject(Paso6);
     
     auto Paso7 = new Obstacle(game, glm::vec3(W/2 - 1400, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso7 -> setColor(ofColor::white);
+    //Paso7 -> setColor(ofColor::white);
     game->addGameObject(Paso7);
     
     auto Paso8 = new Obstacle(game, glm::vec3(W/2 - 1600, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso8 -> setColor(ofColor::white);
+    //Paso8 -> setColor(ofColor::white);
     game->addGameObject(Paso8);
     
     auto Paso9 = new Obstacle(game, glm::vec3(W/2 - 1800, -50, 500), glm::vec3(W/20, 0, 200));
-    Paso9 -> setColor(ofColor::white);
+    //Paso9 -> setColor(ofColor::white);
     game->addGameObject(Paso9);
     
     //Peatón
@@ -156,4 +157,9 @@ void GameObjectGenerator::generateWorld(){
         glm::vec3(W/2 - 100, -25, 500), glm::vec3(50, 150, 50));
 
     game->addGameObject(pedestrian);
+
+
+	
+	auto mancha1 = new Dirt(game, glm::vec3(100, -48, 100), glm::vec3(W / 20, 10, 200));
+	game->addGameObject(mancha1);
 }
