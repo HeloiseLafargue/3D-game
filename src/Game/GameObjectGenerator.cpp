@@ -12,6 +12,8 @@
 #include "CraneW.h"
 #include "CraneL.h"
 #include "Hook.h"
+#include "Dirt.h"
+#include "Oil.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -88,9 +90,9 @@ void GameObjectGenerator::generateWorld(){
     goal->isFixed = true;
     game->addGameObject(goal);
     
-    /*
+    
     // Coins
-    for (int i=0; i < 25; i++){
+    for (int i=0; i < 3; i++){
         auto coin = new Coin(game,
             glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(50));
         
@@ -98,13 +100,13 @@ void GameObjectGenerator::generateWorld(){
     }
     
      // Obstaculos
-    for (int i=0; i < 25; i++){
+    for (int i=0; i < 3; i++){
         auto obstacle = new Obstacle(game,
             glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(100));
         
         game->addGameObject(obstacle);
     }
-    */
+    
     
     // Barrera
     auto wall_c = new Wall(game,
@@ -178,4 +180,13 @@ void GameObjectGenerator::generateWorld(){
     
     
     
+
+
+	// esto representa el collider, el plano esta en dirt.cpp
+	auto tierra = new Dirt(game, glm::vec3(600, -48, 1000), glm::vec3(500, 30, 500));
+	game->addGameObject(tierra);
+
+	// esto representa el collider, el plano esta en dirt.cpp
+	auto aceite = new Oil(game, glm::vec3(-600, -48, 1000), glm::vec3(500, 30, 500));
+	game->addGameObject(aceite);
 }
