@@ -5,7 +5,17 @@
 
 Dirt::Dirt(Game *game, glm::vec3 pos, glm::vec3 dim) :
 	GameObject(game, pos, dim) {
-	material.setDiffuseColor(ofColor::red);
+	
+	plano.set(500, 500);
+	plano.rotateDeg(-90, 1, 0, 0);
+	plano.move(600, -49, 1000);
+
+	ofEnableNormalizedTexCoords();
+	ofDisableArbTex();
+	ofImage img;
+	img.load("mud.jpg");
+
+	texture = img.getTexture();
 
 
 
@@ -21,12 +31,10 @@ void Dirt::update() {
 
 void Dirt::draw() {
 
+	texture.bind();
+	plano.draw();
+	texture.unbind();
 
-	material.begin();
-	{
-		collider->draw();
-	}
-	material.end();
 }
 
 void Dirt::receiveCarCollision(Player *car) {

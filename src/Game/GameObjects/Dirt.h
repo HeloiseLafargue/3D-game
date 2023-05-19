@@ -13,7 +13,12 @@ public:
 	void update() override;
 	void draw() override;
 	void receiveCarCollision(Player *car) override;
+
+	ofPlanePrimitive plano;
+
 	ofxAssimpModelLoader model;
+
+	ofTexture texture;
 
 };
 
