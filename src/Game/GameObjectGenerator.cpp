@@ -9,6 +9,7 @@
 #include "Barrera.h"
 #include "Pedestrian.h"
 #include "Dirt.h"
+#include "Oil.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -130,4 +131,8 @@ void GameObjectGenerator::generateWorld(){
 	// esto representa el collider, el plano esta en dirt.cpp
 	auto tierra = new Dirt(game, glm::vec3(600, -48, 1000), glm::vec3(500, 30, 500));
 	game->addGameObject(tierra);
+
+	// esto representa el collider, el plano esta en dirt.cpp
+	auto aceite = new Oil(game, glm::vec3(-600, -48, 1000), glm::vec3(500, 30, 500));
+	game->addGameObject(aceite);
 }
