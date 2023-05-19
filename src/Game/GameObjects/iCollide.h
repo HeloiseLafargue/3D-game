@@ -9,6 +9,7 @@
 class Player;
 class Pedestrian;
 class Barrera;
+class Hook;
 
 class iCollide{
     
@@ -21,6 +22,7 @@ class iCollide{
     virtual void receiveBulletCollision(GameObject *bullet) {};
     virtual void receivePedestrianCollision(Pedestrian *pedestrian) {};
     virtual void receiveBarreraCollision(Barrera* barrera) {};
+    virtual void receiveHookCollision(Hook* hook) {};
         
     BoxCollider* getCollider(){
         return collider;

@@ -36,6 +36,7 @@ public:
     void brake();
     void stop();
     void addCoins(int n = 1);
+    void zeroCoins();
     int getCoins();
 };
 

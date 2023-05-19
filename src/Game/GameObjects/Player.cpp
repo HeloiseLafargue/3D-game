@@ -20,7 +20,7 @@ void Player::init(){
     speed = 0;
     bLight = false;
     
-    coins = 0;
+    coins = 10;
 }
 
 void Player::update(){
@@ -89,6 +89,10 @@ float Player::getSpeed(){
 
 void Player::addCoins(int n){
     coins += n;
+}
+
+void Player::zeroCoins(){
+    coins = 0;
 }
 
 int Player::getCoins(){
