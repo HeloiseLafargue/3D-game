@@ -34,6 +34,8 @@ public:
     void toggleLight();
     void shoot();
     void brake();
+	void slow();
+	void drift();
     void stop();
     void addCoins(int n = 1);
     void zeroCoins();

@@ -1,4 +1,4 @@
-#include "Player.h"
+﻿#include "Player.h"
 #include "Game.h"
 #include "Bullet.h"
 
@@ -72,6 +72,26 @@ void Player::accelerate(){
 }
 void Player::brake(){
     speed -= 10;
+}
+void Player::slow() {
+	if (speed > 2)
+		speed -= 0.5;
+	else
+		speed = 2;
+}
+void Player::drift() {
+	int crazy = rand() % 100;
+	int lor = rand() % 100;
+
+	/*No derrapa igual, siempre gira mas para la derecha*/
+	if (crazy > 70) {
+		if (lor > 70)
+			transform.rotateDeg(1, 0, 2, 0);
+		else
+			transform.rotateDeg(-2, 0, 2, 0);
+	}
+	/* aumenta la velocidad porque derrapa (loses control) */
+	speed += 0.1;
 }
 
 void Player::stop(){

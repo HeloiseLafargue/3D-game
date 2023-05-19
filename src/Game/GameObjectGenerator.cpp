@@ -14,6 +14,7 @@
 #include "Hook.h"
 #include "Dirt.h"
 #include "Oil.h"
+#include "CrazyArch.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -162,10 +163,11 @@ void GameObjectGenerator::generateWorld(){
                     glm::vec3(roadPos.x, roadPos.y, 2000),
                            glm::vec3(wallSize,  W, wallSize));
     game->addGameObject(Crane_h);
-    
+
     auto Crane_w = new CraneW(game, glm::vec3(roadPos.x, roadPos.y+1000, 2000), glm::vec3(W/2, wallSize, wallSize));
     
     game->addGameObject(Crane_w);
+	
     
     auto Crane_l = new CraneL(game, glm::vec3(roadPos.x, roadPos.y, 2000), glm::vec3(20, W, 20));
     game->addGameObject(Crane_l);
@@ -177,8 +179,7 @@ void GameObjectGenerator::generateWorld(){
     auto Crane_wh = new CraneW(game, glm::vec3(roadPos.x, roadPos.y - 100, 2000), glm::vec3(W/2, wallSize, wallSize));
     
     game->addGameObject(Crane_wh);
-    
-    
+
     
 
 
@@ -189,4 +190,20 @@ void GameObjectGenerator::generateWorld(){
 	// esto representa el collider, el plano esta en dirt.cpp
 	auto aceite = new Oil(game, glm::vec3(-600, -48, 1000), glm::vec3(500, 30, 500));
 	game->addGameObject(aceite);
+
+
+	// Arco loco
+	auto posteArcoDer = new Wall(game,
+		glm::vec3(-600, -51, 6000),
+		glm::vec3(wallSize, 1000, wallSize));
+	game->addGameObject(posteArcoDer);
+
+	auto posteArcoIzq= new Wall(game,
+		glm::vec3(0, -51, 6000),
+		glm::vec3(wallSize, 1000, wallSize));
+	game->addGameObject(posteArcoIzq);
+
+	auto panelArco = new CrazyArch(game, glm::vec3(-300, -48, 6000), glm::vec3(600, 800, wallSize));
+	game->addGameObject(panelArco);
+
 }
