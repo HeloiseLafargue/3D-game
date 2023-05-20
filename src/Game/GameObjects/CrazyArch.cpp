@@ -6,9 +6,9 @@
 CrazyArch::CrazyArch(Game *game, glm::vec3 pos, glm::vec3 dim) :
 	GameObject(game, pos, dim) {
 
-	plano.set(600, 600);
+	plano.set(600, 400);
 	plano.rotateDeg(180, 0, 1, 0);
-	plano.move(-300, 400, 6000);
+	plano.move(300, 400, 8500);
 
 	ofEnableNormalizedTexCoords();
 	ofDisableArbTex();

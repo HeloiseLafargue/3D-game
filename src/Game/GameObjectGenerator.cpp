@@ -14,6 +14,7 @@
 #include "Hook.h"
 #include "Dirt.h"
 #include "Oil.h"
+#include "Well.h"
 #include "CrazyArch.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
@@ -50,8 +51,8 @@ void GameObjectGenerator::generateWorld(){
 
 	road->lightEnable1();
 	road->lightEnable2();
-	road->lightEnable3();
-	road->lightEnable4();
+	//road->lightEnable3();
+	//road->lightEnable4();
 	road->lightEnable5();
 
 
@@ -161,13 +162,32 @@ void GameObjectGenerator::generateWorld(){
 	game->addGameObject(wall4_b);
 	
 
+	//TUNEL
+	auto tunwall_r = new Wall(game,
+		glm::vec3(roadPos2.x - W / 3, roadPos.y, roadPos.z),
+		glm::vec3(wallSize*6, wallSize*8, L/3));
+	game->addGameObject(tunwall_r);
+
+	auto tunwall_l = new Wall(game,
+		glm::vec3(roadPos2.x + W / 3, roadPos.y, roadPos.z),
+		glm::vec3(wallSize*6, wallSize*8, L/3));
+	game->addGameObject(tunwall_l);
+
+	auto tunwall_t = new Wall(game,
+		glm::vec3(roadPos2.x, roadPos.y + 800, roadPos.z),
+		glm::vec3(W, wallSize * 8, L/3));
+	game->addGameObject(tunwall_t);
+
 
 //
+	/*
     auto goal = new Goal(game,
                     glm::vec3(0, roadPos.y, roadPos.z + L/2),
                            glm::vec3(W, 100, 100));
     goal->isFixed = true;
     game->addGameObject(goal);
+
+	*/
     
     
     // Coins
@@ -262,26 +282,30 @@ void GameObjectGenerator::generateWorld(){
 
 
 	// esto representa el collider, el plano esta en dirt.cpp
-	auto tierra = new Dirt(game, glm::vec3(600, -48, 1000), glm::vec3(500, 30, 500));
+	auto tierra = new Dirt(game, glm::vec3(2000, -48, 300), glm::vec3(1000, 30, 1200));
 	game->addGameObject(tierra);
 
 	// esto representa el collider, el plano esta en dirt.cpp
-	auto aceite = new Oil(game, glm::vec3(-600, -48, 1000), glm::vec3(500, 30, 500));
+	auto aceite = new Oil(game, glm::vec3(500, -48, -1700), glm::vec3(1500, 30, 1500));
 	game->addGameObject(aceite);
+
+	// esto representa el collider, el plano esta en dirt.cpp
+	auto pozo = new Well(game, glm::vec3(2200, -48, 9500), glm::vec3(800, 30, 800));
+	game->addGameObject(pozo);
 
 
 	// Arco loco
 	auto posteArcoDer = new Wall(game,
-		glm::vec3(-600, -51, 6000),
+		glm::vec3(0, -51, 8500),
 		glm::vec3(wallSize, 1000, wallSize));
 	game->addGameObject(posteArcoDer);
 
 	auto posteArcoIzq= new Wall(game,
-		glm::vec3(0, -51, 6000),
+		glm::vec3(600, -51, 8500),
 		glm::vec3(wallSize, 1000, wallSize));
 	game->addGameObject(posteArcoIzq);
 
-	auto panelArco = new CrazyArch(game, glm::vec3(-300, -48, 6000), glm::vec3(600, 800, wallSize));
+	auto panelArco = new CrazyArch(game, glm::vec3(300, -48, 8500), glm::vec3(600, 300, wallSize));
 	game->addGameObject(panelArco);
 
 }

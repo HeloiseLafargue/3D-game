@@ -11,10 +11,10 @@ Road::Road(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos){
     transform.rotateDeg(-90, 1, 0, 0);
     plane.set(dim.x, dim.z);
     
-	light.setPosition(200, 200, 200);
+	light.setPosition(500, 200, -1500);
 	light.setDiffuseColor(ofColor::white);
 
-	light2.setPosition(200, 200, 5000);
+	light2.setPosition(0, 200, 4000);
 	light2.setDiffuseColor(ofColor::white);
 
 	light3.setPosition(2500, 200, 200);

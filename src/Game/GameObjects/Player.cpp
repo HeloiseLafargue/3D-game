@@ -94,6 +94,14 @@ void Player::drift() {
 	speed += 0.1;
 }
 
+void Player::fall() {
+	transform.setPosition(0, 0, 0);
+	speed = 0;
+	bLight = false;
+
+	coins = 0;
+}
+
 void Player::stop(){
     speed = 0;
     transform.setPosition(prevPos);

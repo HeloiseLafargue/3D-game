@@ -1,14 +1,15 @@
 #pragma once
-#ifndef Oil_h
-#define Oil_h
+#pragma once
+#ifndef Well_h
+#define Well_h
 #include "GameObject.h"
 #include "ofxAssimpModelLoader.h"
 
-class Oil : public GameObject {
+class Well : public GameObject {
 
 public:
-	Oil(Game *game, glm::vec3 pos, glm::vec3 dim);
-	~Oil();
+	Well(Game *game, glm::vec3 pos, glm::vec3 dim);
+	~Well();
 
 	void update() override;
 	void draw() override;
@@ -22,4 +23,4 @@ public:
 
 };
 
-#endif /* Oil_h */
+#endif /* Well_h */

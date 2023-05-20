@@ -6,9 +6,9 @@
 Oil::Oil(Game *game, glm::vec3 pos, glm::vec3 dim) :
 	GameObject(game, pos, dim) {
 	
-	plano.set(500, 500);
+	plano.set(1500, 1500);
 	plano.rotateDeg(-90, 1, 0, 0);
-	plano.move(-600, -49, 1000);
+	plano.move(500, -49, -1700);
 
 	ofEnableNormalizedTexCoords();
 	ofDisableArbTex();

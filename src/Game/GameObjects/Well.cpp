@@ -1,35 +1,35 @@
-#include "Dirt.h"
+#include "Well.h"
 #include "Player.h"
 #include "Game.h"
 
 
-Dirt::Dirt(Game *game, glm::vec3 pos, glm::vec3 dim) :
+Well::Well(Game *game, glm::vec3 pos, glm::vec3 dim) :
 	GameObject(game, pos, dim) {
-	
-	plano.set(1000, 1200);
+
+	plano.set(800, 800);
 	plano.rotateDeg(-90, 1, 0, 0);
-	plano.move(2000, -49, 300);
+	plano.move(2200, -49, 9500);
 
 	ofEnableNormalizedTexCoords();
 	ofDisableArbTex();
 	ofImage img;
-	img.load("mud.jpg");
+	img.load("well.jpg");
 
 	texture = img.getTexture();
 
 
 
 }
-Dirt::~Dirt() {
+Well::~Well() {
 
 }
 
 
-void Dirt::update() {
+void Well::update() {
 	model.update();
 }
 
-void Dirt::draw() {
+void Well::draw() {
 
 	texture.bind();
 	plano.draw();
@@ -37,7 +37,7 @@ void Dirt::draw() {
 
 }
 
-void Dirt::receiveCarCollision(Player *car) {
-	car->slow();
+void Well::receiveCarCollision(Player *car) {
+	car->fall();
 }
 
