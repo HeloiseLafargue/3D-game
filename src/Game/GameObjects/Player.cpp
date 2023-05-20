@@ -1,10 +1,15 @@
-﻿#include "Player.h"
+#include "Player.h"
 #include "Game.h"
 #include "Bullet.h"
 
 Player::Player(Game *game):GameObject(game, glm::vec3(100)){
     
     material.setDiffuseColor(ofColor::blue);
+    model.loadModel("Humvee.obj");
+    model.setRotation(0, 180, 1, 0, 0);
+    model.setRotation(0, 180, 0, 0, 1);
+    model.setScale(0.45, 0.45, 0.45);
+    model.setPosition(0, -50, 0);
     
     faro.setParent(transform);
     faro.setDiffuseColor(ofColor::yellow);
@@ -24,6 +29,7 @@ void Player::init(){
 }
 
 void Player::update(){
+    model.update();
     prevPos = transform.getPosition();
     transform.move(transform.getZAxis() * speed);
     
@@ -32,7 +38,11 @@ void Player::update(){
 }
 
 void Player::draw(){
+    transform.transformGL();
+    model.drawFaces();
     
+  //  ofDrawAxis(200);
+    transform.restoreTransformGL();
     faro.draw();
     if(bLight)
         faro.enable();

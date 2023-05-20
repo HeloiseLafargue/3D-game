@@ -17,6 +17,8 @@
 #include "Well.h"
 #include "Boost.h"
 #include "CrazyArch.h"
+#include "Bombardier.h"
+#include "Bomb.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -162,7 +164,7 @@ void GameObjectGenerator::generateWorld(){
 		glm::vec3(4500, wallSize, wallSize));
 	game->addGameObject(wall4_b);
 	
-
+    /*
 	//TUNEL
 	auto tunwall_r = new Wall(game,
 		glm::vec3(roadPos2.x - W / 3, roadPos.y, roadPos.z),
@@ -178,7 +180,7 @@ void GameObjectGenerator::generateWorld(){
 		glm::vec3(roadPos2.x, roadPos.y + 800, roadPos.z),
 		glm::vec3(W, wallSize * 8, L/3));
 	game->addGameObject(tunwall_t);
-
+    */
 
 //
 	/*
@@ -190,7 +192,7 @@ void GameObjectGenerator::generateWorld(){
 
 	*/
     
-    
+    /*
     // Para camino 1
     // Coins
     for (int i=0; i < 4; i++){
@@ -206,6 +208,13 @@ void GameObjectGenerator::generateWorld(){
             glm::vec3(roadPos.x + rand()%(W-100) - (W/2 - 50), roadPos.y + 50, roadPos.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(100));
         
         game->addGameObject(obstacle);
+    }
+    
+    // Boost
+    for (int i=0; i < 4; i++){
+        auto boost = new Boost(game, glm::vec3(roadPos.x + rand()%(W-100) - (W/2 - 50), roadPos.y, roadPos.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(100, 30, 100));
+        
+        game->addGameObject(boost);
     }
     
     // Para camino 2
@@ -225,6 +234,13 @@ void GameObjectGenerator::generateWorld(){
        game->addGameObject(obstacle);
     }
     
+    // Boost
+    for (int i=0; i < 4; i++){
+        auto boost = new Boost(game, glm::vec3(roadPos2.x + rand()%(W-100) - (W/2 - 50), roadPos.y, roadPos2.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(100, 30, 100));
+        
+        game->addGameObject(boost);
+    }
+    
     // Para camino 3
     // Coins
     for (int i=0; i < 4; i++){
@@ -240,6 +256,13 @@ void GameObjectGenerator::generateWorld(){
            glm::vec3(roadPos3.x + rand()%4400 - 2200, roadPos.y + 50, roadPos3.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(100));
        
        game->addGameObject(obstacle);
+    }
+    
+    // Boost
+    for (int i=0; i < 4; i++){
+        auto boost = new Boost(game, glm::vec3(roadPos3.x + rand()%4400 - 2200, roadPos.y, roadPos3.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(100, 30, 100));
+        
+        game->addGameObject(boost);
     }
     
     // Para camino 4
@@ -258,6 +281,13 @@ void GameObjectGenerator::generateWorld(){
        
        game->addGameObject(obstacle);
     }
+    
+    // Boost
+    for (int i=0; i < 4; i++){
+        auto boost = new Boost(game, glm::vec3(roadPos4.x + rand()%4400 - 2200, roadPos.y, roadPos4.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(100, 30, 100));
+        
+        game->addGameObject(boost);
+    }
 
     
     
@@ -273,7 +303,7 @@ void GameObjectGenerator::generateWorld(){
                     glm::vec3(0, roadPos.y + 500, roadPos.z),
                            glm::vec3(W - 200, wallSize, wallSize));
     game->addGameObject(barrera);
-    
+    */
     
     /*
     // Paso de peatones
@@ -336,7 +366,7 @@ void GameObjectGenerator::generateWorld(){
     
     
 
-
+    /*
 	// esto representa el collider, el plano esta en dirt.cpp
 	auto tierra = new Dirt(game, glm::vec3(2000, -48, 300), glm::vec3(1000, 30, 1200));
 	game->addGameObject(tierra);
@@ -369,6 +399,14 @@ void GameObjectGenerator::generateWorld(){
 
 	auto panelArco = new CrazyArch(game, glm::vec3(300, -48, 8500), glm::vec3(600, 300, wallSize));
 	game->addGameObject(panelArco);
+    */
     
-
+    auto bombardier = new Bombardier(game, glm::vec3(roadPos2.x, roadPos2.y + 1500, 0), glm::vec3(100, 100, 100));
+    
+    game->addGameObject(bombardier);
+    
+    auto bomb = new Bomb(game, glm::vec3(roadPos2.x, roadPos2.y + 1500, 0), glm::vec3(50, 50, 50));
+    
+    game->addGameObject(bomb);
+    
 }

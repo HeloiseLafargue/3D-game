@@ -10035,6 +10035,28 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>B178662CD52358AF11432961</key>
+			<dict>
+				<key>fileRef</key>
+				<string>80626CBE8B405C7EAB0E00E8</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>80626CBE8B405C7EAB0E00E8</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Bomb.cpp</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Bomb.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>274B5955678A68BCD8FB86CE</key>
 			<dict>
 				<key>fileRef</key>
@@ -10087,6 +10109,65 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>373F8BDD9AF89F0CD785283D</key>
+			<dict>
+				<key>fileRef</key>
+				<string>DF32FA59499E24223432AA12</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>DF32FA59499E24223432AA12</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Bombardier.cpp</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Bombardier.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>A5AEBC46878FA7115262D8A7</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Boost.h</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Boost.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>662CB713E8611ED47D5FF9BD</key>
+			<dict>
+				<key>fileRef</key>
+				<string>51A2068B84E0CB5AAFE78AD3</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>51A2068B84E0CB5AAFE78AD3</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Boost.cpp</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Boost.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>3C7ED11A8F5CCB9759920A22</key>
 			<dict>
 				<key>fileRef</key>
@@ -10131,6 +10212,21 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>1AAB9EEB5B59F9C2B7639CDF</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Bombardier.h</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Bombardier.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>25774A7D84A0B55DEE00AAAD</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -10158,6 +10254,21 @@
 				<string>Oil.h</string>
 				<key>path</key>
 				<string>src/Game/GameObjects/Oil.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>5B628C8147A74E0907526DA1</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Bomb.h</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/Bomb.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -10581,13 +10692,19 @@
 					<string>406F83A4CA27ABB6DF5D88CA</string>
 					<string>3E137DABF513963FB5CA190E</string>
 					<string>9CF96B89027CE8C2BD4D20E7</string>
+					<string>5B628C8147A74E0907526DA1</string>
 					<string>BBDC6AFEDE36A06BEBE8D893</string>
 					<string>25774A7D84A0B55DEE00AAAD</string>
+					<string>1AAB9EEB5B59F9C2B7639CDF</string>
 					<string>C984C753BD337B01290F3406</string>
 					<string>0A1B8EE2924543420009DED0</string>
+					<string>51A2068B84E0CB5AAFE78AD3</string>
+					<string>A5AEBC46878FA7115262D8A7</string>
+					<string>DF32FA59499E24223432AA12</string>
 					<string>6DB482E87C195C101DE057C3</string>
 					<string>27A26281773AAE6144D03995</string>
 					<string>8D31F5C5CD289F3D14B3ADDE</string>
+					<string>80626CBE8B405C7EAB0E00E8</string>
 					<string>62C10A33285D0997DF8046FE</string>
 					<string>1C65022D981054D1A57A0A93</string>
 					<string>C2A0938E5999D79E9CD206B9</string>
@@ -14060,7 +14177,10 @@ fi
 					<string>5E48329DBB961E69D460C205</string>
 					<string>5F3DBBBEA9E898520CF96B07</string>
 					<string>3C7ED11A8F5CCB9759920A22</string>
+					<string>662CB713E8611ED47D5FF9BD</string>
+					<string>373F8BDD9AF89F0CD785283D</string>
 					<string>274B5955678A68BCD8FB86CE</string>
+					<string>B178662CD52358AF11432961</string>
 					<string>B3E6BDA77FBB0B49E4522858</string>
 					<string>67E1A55B1C9EB410D4116C60</string>
 					<string>943117B2AD7463B4567E88B8</string>

@@ -10,9 +10,9 @@ Coin::Coin(Game *game, glm::vec3 pos, glm::vec3 dim):
 	model.setRotation(0, 90, 0, 1, 0);
 	model.setPosition(0, 75, 0);
 	model.setScale(0.15, 0.15, 0.15);
+    model.enableColors();
         
  
-    
 }
 Coin::~Coin(){
     
@@ -24,8 +24,6 @@ void Coin::update(){
 }
 
 void Coin::draw(){
-   
-    
 	transform.transformGL();
 	model.drawFaces();
 	transform.restoreTransformGL();

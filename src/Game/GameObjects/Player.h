@@ -3,6 +3,9 @@
 
 #include "ofMain.h"
 #include "GameObject.h"
+
+#include "ofxAssimpModelLoader.h"
+
 class Game;
 
 // TODO add speed settings
@@ -42,6 +45,9 @@ public:
     void addCoins(int n = 1);
     void zeroCoins();
     int getCoins();
+    
+    ofxAssimpModelLoader model;
+    
 };
 
 #endif 
