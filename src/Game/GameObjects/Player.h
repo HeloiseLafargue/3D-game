@@ -15,6 +15,9 @@ class Player : public GameObject{
     bool bLight;
     glm::vec3 prevPos;
     int coins;
+    int laps;
+    int cooldown;
+    int updateValue;
     
 public:
     
@@ -42,6 +45,9 @@ public:
     void addCoins(int n = 1);
     void zeroCoins();
     int getCoins();
+    void noCheat();
+    int getLaps();
+    void addLap();
 };
 
 #endif 
