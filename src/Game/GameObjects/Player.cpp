@@ -157,13 +157,13 @@ void Player::shoot(){
 }
 void Player::noCheat() {
     if (cooldown == 0) {
-        addLap();
+        setLaps(laps + 1);
         cooldown = 1;
     }  
 }
 int Player::getLaps() {
     return laps;
 }
-void Player::addLap() {
-    laps += 1;
+void Player::setLaps(int n) {
+    laps = n;
 }

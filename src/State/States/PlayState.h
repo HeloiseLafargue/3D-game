@@ -15,6 +15,8 @@ public:
     void draw();
     void next();
     void keyPressed(int key);
+
+    ofTrueTypeFont verdana;
         
 };
 #endif
