@@ -6,6 +6,7 @@
 Obstacle::Obstacle(Game *game, glm::vec3 pos, glm::vec3 dim):
     GameObject(game, pos, dim){
     material.setDiffuseColor(ofColor::whiteSmoke);
+    model.loadModel("Box.obj");
         
  
     
@@ -20,7 +21,11 @@ void Obstacle::update(){
 }
 
 void Obstacle::draw(){
-   
+    transform.transformGL();
+    model.drawFaces();
+    
+  //  ofDrawAxis(200);
+    transform.restoreTransformGL();
     
     material.begin();
     {
