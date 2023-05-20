@@ -39,5 +39,6 @@ void Well::draw() {
 
 void Well::receiveCarCollision(Player *car) {
 	car->fall();
+	car->setLaps(0);
 }
 

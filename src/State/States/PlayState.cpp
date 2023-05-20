@@ -1,9 +1,10 @@
 #include "PlayState.h"
 #include "ResultState.h"
 #include "Player.h"
+#include "PauseState.h"
 
 PlayState::PlayState(Game *game): State(game, "Play State"){
-    game->init();
+    //game->init();
 };
 
 void PlayState::update(){
@@ -17,6 +18,9 @@ void PlayState::update(){
         game->getPlayer()->accelerate();
     if(ofGetKeyPressed(OF_KEY_DOWN))
         game->getPlayer()->brake();
+
+    if (ofGetKeyPressed('p'))
+        game->setState(new PauseState(game));
 };
     
 void PlayState::draw(){
@@ -34,6 +38,8 @@ void PlayState::draw(){
         ofDrawBitmapString("Speed: " + ofToString(game->getPlayer()->getSpeed(), 2), 0, 0);
         ofTranslate(0, 20);
         ofDrawBitmapString("Coins: " + ofToString(game->getPlayer()->getCoins(), 2), 0, 0);
+        ofTranslate(0, 20);
+        ofDrawBitmapString("Laps: " + ofToString(game->getPlayer()->getLaps(), 2), 0, 0);
 
     }
     ofPopMatrix();
@@ -41,7 +47,12 @@ void PlayState::draw(){
 };
 
 void PlayState::next(){
-    game->setState(new ResultState(game));
+    if (ofGetKeyPressed('p')) {
+        game->setState(new PauseState(game));
+    }
+    else {
+        game->setState(new ResultState(game));
+    }
 };
 
 

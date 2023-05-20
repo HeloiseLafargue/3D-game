@@ -13,6 +13,8 @@ public:
     void update();
     void draw();
     void next();
+
+    ofTrueTypeFont verdana;
         
 };
 

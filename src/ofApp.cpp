@@ -1,13 +1,17 @@
 #include "ofApp.h"
 #include "MenuState.h"
+#include "PauseState.h"
 #include "PlayState.h"
 #include "Player.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     game = new Game();
-    game->setState(new PlayState(game));
+    game->setState(new MenuState(game));
+    //game->setState(new PlayState(game));
     ofSetFrameRate(60);
+
+    verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 
 ofApp::~ofApp(){

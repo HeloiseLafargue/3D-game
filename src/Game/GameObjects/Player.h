@@ -47,7 +47,7 @@ public:
     int getCoins();
     void noCheat();
     int getLaps();
-    void addLap();
+    void setLaps(int n);
 };
 
 #endif 
