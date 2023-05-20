@@ -27,15 +27,45 @@ void GameObjectGenerator::generateWorld(){
     auto road = new Road(game, roadPos, glm::vec3(W, 0, L));
     
     game->addGameObject(road);
+
+
+	// Camino2
+	glm::vec3 roadPos2(2500, -50.1, L/2 - 1000);
+	auto road2 = new Road(game, roadPos2, glm::vec3(W, 0, L));
+
+
+	game->addGameObject(road2);
+
+	// Camino3
+	glm::vec3 roadPos3(1250, -50.1, -L/4 + 300); // Este z es un calculo a ojo
+	auto road3 = new Road(game, roadPos3, glm::vec3(4500, 0, L/4));
+
+	game->addGameObject(road3);
+
+	// Camino4
+	glm::vec3 roadPos4(1250, -50.1, L + 250);
+	auto road4 = new Road(game, roadPos4, glm::vec3(4500, 0, L / 4));
+
+	game->addGameObject(road4);
+
+	road->lightEnable1();
+	road->lightEnable2();
+	road->lightEnable3();
+	road->lightEnable4();
+	road->lightEnable5();
+
+
 //
     int wallSize = 100;
 
+	/*
     ofImage circuito;
     circuito.load("circuito.png");
 
     int w = circuito.getWidth()/16;
     int h = circuito.getHeight()/16;
     circuito.resize(w, h);
+	*/
 
 
 //    for(int x = 0; x < w; x++){
@@ -62,14 +92,9 @@ void GameObjectGenerator::generateWorld(){
 //
 //    }
     
-    // Paredes
+    // Paredes Camino 1
     auto wall_r = new Wall(game,
                     glm::vec3(-W/2, roadPos.y, roadPos.z),
-                           glm::vec3(wallSize, wallSize, L));
-    game->addGameObject(wall_r);
-
-    wall_r = new Wall(game,
-                    glm::vec3(-W/2, roadPos.y, roadPos.z - L * 0.8),
                            glm::vec3(wallSize, wallSize, L));
     game->addGameObject(wall_r);
 
@@ -80,10 +105,63 @@ void GameObjectGenerator::generateWorld(){
                            glm::vec3(wallSize, wallSize, L));
     game->addGameObject(wall_l);
 
-    wall_l = new Wall(game,
-                    glm::vec3(W/2, roadPos.y, roadPos.z - L * 0.8),
-                           glm::vec3(wallSize, wallSize, L));
-    game->addGameObject(wall_l);
+	// Paredes Camino 2
+	auto wall2_r = new Wall(game,
+		glm::vec3(roadPos2.x - W/2, roadPos.y, roadPos.z),
+		glm::vec3(wallSize, wallSize, L));
+	game->addGameObject(wall2_r);
+
+
+
+	auto wall2_l = new Wall(game,
+		glm::vec3(roadPos2.x + W/2, roadPos.y, roadPos.z),
+		glm::vec3(wallSize, wallSize, L));
+	game->addGameObject(wall2_l);
+
+	// Paredes Camino 3
+	auto wall3_r = new Wall(game,
+		glm::vec3(roadPos3.x - 4500 / 2, roadPos.y, roadPos3.z),
+		glm::vec3(wallSize, wallSize, L / 4));
+	game->addGameObject(wall3_r);
+
+	auto wall3_l = new Wall(game,
+		glm::vec3(roadPos3.x + 4500 / 2, roadPos.y, roadPos3.z),
+		glm::vec3(wallSize, wallSize, L / 4));
+	game->addGameObject(wall3_l);
+
+	auto wall3_f = new Wall(game,
+		glm::vec3(roadPos3.x, roadPos.y, roadPos3.z + L/8),
+		glm::vec3(500, wallSize, wallSize));
+	game->addGameObject(wall3_f);
+
+	auto wall3_b = new Wall(game,
+		glm::vec3(roadPos3.x, roadPos.y, roadPos3.z - L/8),
+		glm::vec3(4500, wallSize, wallSize));
+	game->addGameObject(wall3_b);
+
+	// Paredes Camino 3
+	auto wall4_r = new Wall(game,
+		glm::vec3(roadPos4.x - 4500 / 2, roadPos.y, roadPos4.z),
+		glm::vec3(wallSize, wallSize, L / 4));
+	game->addGameObject(wall4_r);
+
+	auto wall4_l = new Wall(game,
+		glm::vec3(roadPos4.x + 4500 / 2, roadPos.y, roadPos4.z),
+		glm::vec3(wallSize, wallSize, L / 4));
+	game->addGameObject(wall4_l);
+	
+	auto wall4_f = new Wall(game,
+		glm::vec3(roadPos4.x, roadPos.y, roadPos4.z - L / 8),
+		glm::vec3(500, wallSize, wallSize));
+	game->addGameObject(wall4_f);
+
+	auto wall4_b = new Wall(game,
+		glm::vec3(roadPos4.x, roadPos.y, roadPos4.z + L / 8),
+		glm::vec3(4500, wallSize, wallSize));
+	game->addGameObject(wall4_b);
+	
+
+
 //
     auto goal = new Goal(game,
                     glm::vec3(0, roadPos.y, roadPos.z + L/2),
