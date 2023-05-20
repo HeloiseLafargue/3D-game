@@ -19,6 +19,7 @@ public:
     ofxPanel gui;
     ofParameter<int>  dif;
     ofParameter<int>  totalGames;
+    ofTrueTypeFont verdana;
         
 };
 #endif 

@@ -10,6 +10,7 @@ void MenuState::setup() {
     gui.add(dif.set("Difficulty", 1, 1, 6));
     gui.add(totalGames.set("Number of Games", 1, 1, 10));
 
+    verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 void MenuState::update(){
     if (ofGetKeyPressed()) {
@@ -27,6 +28,8 @@ void MenuState::draw(){
     ofSetColor(ofColor::white);
     ofDrawBitmapString(name, ofGetWidth() / 2 - 40, 300);
     ofDrawBitmapString("Press any key to Start", ofGetWidth() / 2 - 80, 370);
+    verdana.drawString("test", ofGetWidth() / 2 - 200, 330);
+
     gui.draw();
 };
 

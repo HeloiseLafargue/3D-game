@@ -8,7 +8,6 @@
 void ofApp::setup(){
     game = new Game();
     game->setState(new MenuState(game));
-    //game->setState(new PlayState(game));
     ofSetFrameRate(60);
 
     verdana.load("Arial Unicode.ttf", 25, true, true);
