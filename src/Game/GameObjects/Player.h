@@ -18,6 +18,9 @@ class Player : public GameObject{
     bool bLight;
     glm::vec3 prevPos;
     int coins;
+    int laps;
+    int cooldown;
+    int updateValue;
     
 public:
     
@@ -48,6 +51,9 @@ public:
     
     ofxAssimpModelLoader model;
     
+    void noCheat();
+    int getLaps();
+    void addLap();
 };
 
 #endif 

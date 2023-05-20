@@ -26,6 +26,9 @@ void Player::init(){
     bLight = false;
     
     coins = 10;
+    laps = 0;
+    cooldown = 0;
+    updateValue = 0;
 }
 
 void Player::update(){
@@ -35,6 +38,12 @@ void Player::update(){
     
     if(speed > MAX_SPEED) speed = MAX_SPEED;
     if(speed < 0) speed = 0;
+    
+    updateValue++;
+    if (updateValue > 1000) {
+        updateValue = 0;
+        cooldown = 0;
+    }
 }
 
 void Player::draw(){
@@ -145,4 +154,16 @@ void Player::shoot(){
         game->addGameObject(new Bullet(game, transform));
         coins--;
     }
+}
+void Player::noCheat() {
+    if (cooldown == 0) {
+        addLap();
+        cooldown = 1;
+    }  
+}
+int Player::getLaps() {
+    return laps;
+}
+void Player::addLap() {
+    laps += 1;
 }

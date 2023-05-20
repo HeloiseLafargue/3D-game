@@ -33,6 +33,8 @@ void Goal::drawDebug(){
 }
 
 void  Goal::receiveCarCollision(Player *car){
-    car->stop();
-    game->finishGame();
+    car->noCheat();
+    if (car->getLaps() >= 3) {
+        game->finishGame();
+    }    
 }

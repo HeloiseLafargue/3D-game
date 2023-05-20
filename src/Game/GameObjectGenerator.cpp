@@ -182,15 +182,12 @@ void GameObjectGenerator::generateWorld(){
 	game->addGameObject(tunwall_t);
     */
 
-//
-	/*
+    // Goal
     auto goal = new Goal(game,
                     glm::vec3(0, roadPos.y, roadPos.z + L/2),
                            glm::vec3(W, 100, 100));
     goal->isFixed = true;
     game->addGameObject(goal);
-
-	*/
     
     /*
     // Para camino 1
