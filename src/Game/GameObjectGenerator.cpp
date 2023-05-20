@@ -190,21 +190,75 @@ void GameObjectGenerator::generateWorld(){
 	*/
     
     
+    // Para camino 1
     // Coins
-    for (int i=0; i < 3; i++){
+    for (int i=0; i < 4; i++){
         auto coin = new Coin(game,
-            glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(50));
+            glm::vec3(roadPos.x + rand()%(W-100) - (W/2 - 50), roadPos.y + 25, roadPos.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(50));
         
         game->addGameObject(coin);
     }
     
      // Obstaculos
-    for (int i=0; i < 3; i++){
+    for (int i=0; i < 4; i++){
         auto obstacle = new Obstacle(game,
-            glm::vec3(rand()%2000 - 1000, 0, rand()%7000), glm::vec3(100));
+            glm::vec3(roadPos.x + rand()%(W-100) - (W/2 - 50), roadPos.y + 50, roadPos.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(100));
         
         game->addGameObject(obstacle);
     }
+    
+    // Para camino 2
+    // Coins
+    for (int i=0; i < 4; i++){
+        auto coin = new Coin(game,
+            glm::vec3(roadPos2.x + rand()%(W-100) - (W/2 - 50), roadPos.y + 25, roadPos2.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(50));
+        
+        game->addGameObject(coin);
+    }
+    
+    // Obstaculos
+   for (int i=0; i < 4; i++){
+       auto obstacle = new Obstacle(game,
+           glm::vec3(roadPos2.x + rand()%(W-100) - (W/2 - 50), roadPos.y + 50, roadPos2.z + rand()%(L - 100) - (L/2 - 50)), glm::vec3(100));
+       
+       game->addGameObject(obstacle);
+    }
+    
+    // Para camino 3
+    // Coins
+    for (int i=0; i < 4; i++){
+        auto coin = new Coin(game,
+            glm::vec3(roadPos3.x + rand()%4400 - 2200, roadPos.y + 25, roadPos3.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(50));
+        
+        game->addGameObject(coin);
+    }
+    
+    // Obstaculos
+   for (int i=0; i < 4; i++){
+       auto obstacle = new Obstacle(game,
+           glm::vec3(roadPos3.x + rand()%4400 - 2200, roadPos.y + 50, roadPos3.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(100));
+       
+       game->addGameObject(obstacle);
+    }
+    
+    // Para camino 4
+    // Coins
+    for (int i=0; i < 4; i++){
+        auto coin = new Coin(game,
+            glm::vec3(roadPos4.x + rand()%4400 - 2200, roadPos.y + 25, roadPos4.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(50));
+        
+        game->addGameObject(coin);
+    }
+    
+    // Obstaculos
+   for (int i=0; i < 4; i++){
+       auto obstacle = new Obstacle(game,
+           glm::vec3(roadPos4.x + rand()%4400 - 2200, roadPos.y + 50, roadPos4.z + rand()%(L/4 - 100) - (L/8 - 50)), glm::vec3(100));
+       
+       game->addGameObject(obstacle);
+    }
+
+    
     
     
     // Barrera
@@ -218,6 +272,7 @@ void GameObjectGenerator::generateWorld(){
                     glm::vec3(0, roadPos.y + 500, roadPos.z),
                            glm::vec3(W - 200, wallSize, wallSize));
     game->addGameObject(barrera);
+    
     
     /*
     // Paso de peatones
@@ -277,7 +332,7 @@ void GameObjectGenerator::generateWorld(){
     auto Crane_wh = new CraneW(game, glm::vec3(roadPos.x, roadPos.y - 100, 2000), glm::vec3(W/2, wallSize, wallSize));
     
     game->addGameObject(Crane_wh);
-
+    
     
 
 
@@ -307,5 +362,6 @@ void GameObjectGenerator::generateWorld(){
 
 	auto panelArco = new CrazyArch(game, glm::vec3(300, -48, 8500), glm::vec3(600, 300, wallSize));
 	game->addGameObject(panelArco);
+    
 
 }

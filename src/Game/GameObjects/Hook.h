@@ -4,6 +4,8 @@
 #include "GameObject.h"
 #include "Barrera.h"
 
+#include "ofxAssimpModelLoader.h"
+
 class Pedestrian;
 
 class Hook : public GameObject{
@@ -21,7 +23,7 @@ public:
     void receivePedestrianCollision(Pedestrian *pedestrian) override;
     void checkCollisions() override;
     void turn();
-    
+    ofxAssimpModelLoader model;
 };
 
 #endif

@@ -4,24 +4,28 @@
 #include "Game.h"
 
 Hook::Hook(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
-    material.setEmissiveColor(ofColor::darkorange);
+    model.loadModel("14068_Pulley_Hook_Single_Antique_v2_L2.obj");
     collider->move(800, 0, 0);
+    model.setRotation(0, 90, 1, 0, 0);
+    model.setPosition(800, -100, 0);
+    model.setScale(0.4, 0.4, 0.4);
+    
     speedC = 1;
     speedL = 5;
 }
 Hook::~Hook(){}
 
 void Hook::draw(){
+    transform.transformGL();
+    model.drawFaces();
     
-    material.begin();
-    {
-        collider->draw();
-    }
-    material.end();
+  //  ofDrawAxis(200);
+    transform.restoreTransformGL();
     
 }
 
 void Hook::update(){
+    model.update();
     transform.rotateDeg(0 + speedC, glm::vec3(0,1,0));
     transform.move(transform.getYAxis() * -speedL);
     bTurned = false;
