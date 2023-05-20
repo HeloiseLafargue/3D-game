@@ -102,6 +102,10 @@ void Player::fall() {
 	coins = 0;
 }
 
+void Player::boost() {
+	speed += 10;
+}
+
 void Player::stop(){
     speed = 0;
     transform.setPosition(prevPos);
