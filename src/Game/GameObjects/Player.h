@@ -38,6 +38,7 @@ public:
 	void drift();
     void stop();
 	void fall();
+	void boost();
     void addCoins(int n = 1);
     void zeroCoins();
     int getCoins();

@@ -15,6 +15,7 @@
 #include "Dirt.h"
 #include "Oil.h"
 #include "Well.h"
+#include "Boost.h"
 #include "CrazyArch.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
@@ -347,6 +348,12 @@ void GameObjectGenerator::generateWorld(){
 	// esto representa el collider, el plano esta en dirt.cpp
 	auto pozo = new Well(game, glm::vec3(2200, -48, 9500), glm::vec3(800, 30, 800));
 	game->addGameObject(pozo);
+
+	// esto representa el collider, el plano esta en dirt.cpp
+	auto boost = new Boost(game, glm::vec3(300, -48, 400), glm::vec3(100, 30, 100));
+	game->addGameObject(boost);
+
+
 
 
 	// Arco loco
