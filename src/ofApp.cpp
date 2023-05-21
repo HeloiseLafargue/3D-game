@@ -1,6 +1,6 @@
 #include "ofApp.h"
 #include "MenuState.h"
-#include "PauseState.h"
+//#include "PauseState.h"
 #include "PlayState.h"
 #include "Player.h"
 

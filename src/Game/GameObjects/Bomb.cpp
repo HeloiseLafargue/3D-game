@@ -4,6 +4,7 @@
 
 Bomb::Bomb(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
 	model.loadModel("bomb.obj");
+    collider -> move(800, 0, 0);
 	model.setRotation(0, 180, 1, 0, 0);
 	model.setScale(0.25, 0.25, 0.25);
     speed = 1;
@@ -20,7 +21,6 @@ void Bomb::draw(){
 
 void Bomb::update(){
 	model.update();
-    transform.move(transform.getZAxis() * +speed);
     transform.move(transform.getYAxis() * -speed);
 }
 

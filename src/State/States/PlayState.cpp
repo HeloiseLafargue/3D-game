@@ -1,7 +1,7 @@
 #include "PlayState.h"
 #include "ResultState.h"
 #include "Player.h"
-#include "PauseState.h"
+//#include "PauseState.h"
 
 PlayState::PlayState(Game *game): State(game, "Play State"){
     //game->init();
@@ -18,9 +18,10 @@ void PlayState::update(){
         game->getPlayer()->accelerate();
     if(ofGetKeyPressed(OF_KEY_DOWN))
         game->getPlayer()->brake();
-
+/*
     if (ofGetKeyPressed('p'))
         game->setState(new PauseState(game));
+*/
 };
     
 void PlayState::draw(){
@@ -48,7 +49,7 @@ void PlayState::draw(){
 
 void PlayState::next(){
     if (ofGetKeyPressed('p')) {
-        game->setState(new PauseState(game));
+        //game->setState(new PauseState(game));
     }
     else {
         game->setState(new ResultState(game));
