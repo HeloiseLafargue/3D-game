@@ -7,6 +7,8 @@
 
 class MenuState: public State{
 public:
+    ofImage logo;
+
     MenuState(Game* game);
     
     ~MenuState(){};
@@ -20,6 +22,6 @@ public:
     ofParameter<int>  dif;
     ofParameter<int>  totalGames;
     ofTrueTypeFont verdana;
-        
+    
 };
 #endif 
