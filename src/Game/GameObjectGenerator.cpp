@@ -19,6 +19,7 @@
 #include "CrazyArch.h"
 #include "Bombardier.h"
 #include "Bomb.h"
+#include "ColliderLaps.h"
 
 GameObjectGenerator::GameObjectGenerator(Game *game): game(game){}
 
@@ -164,7 +165,7 @@ void GameObjectGenerator::generateWorld(){
 		glm::vec3(4500, wallSize, wallSize));
 	game->addGameObject(wall4_b);
 	
-    /*
+    
 	//TUNEL
 	auto tunwall_r = new Wall(game,
 		glm::vec3(roadPos2.x - W / 3, roadPos.y, roadPos.z),
@@ -180,7 +181,7 @@ void GameObjectGenerator::generateWorld(){
 		glm::vec3(roadPos2.x, roadPos.y + 800, roadPos.z),
 		glm::vec3(W, wallSize * 8, L/3));
 	game->addGameObject(tunwall_t);
-    */
+    
 
     // Goal
     auto goal = new Goal(game,
@@ -398,20 +399,23 @@ void GameObjectGenerator::generateWorld(){
 	game->addGameObject(panelArco);
     */
     
-<<<<<<< Updated upstream
     auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(100, 100, 100));
     game->addGameObject(bombardier);
 
 	    
     auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(50, 50, 50));
-=======
-    auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(100, 100, 100));
-    
+    //auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(100, 100, 100));
+
     game->addGameObject(bombardier);
     
-    auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(50, 50, 50));
->>>>>>> Stashed changes
+    //auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(50, 50, 50));
     
     game->addGameObject(bomb);
+
+
+    // ColliderLaps
+    auto colliderLaps = new ColliderLaps(game, glm::vec3(roadPos2.x, roadPos.y, roadPos.z), glm::vec3(wallSize * 6, wallSize * 8, L / 3));
+
+    game->addGameObject(colliderLaps);
     
 }

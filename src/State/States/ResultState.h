@@ -15,7 +15,8 @@ public:
     void next();
 
     ofTrueTypeFont verdana;
-    int getScore(Player* car);
+    void getScore(Game* game,Player* car);
+    int score;
         
 };
 

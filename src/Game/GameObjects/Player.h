@@ -21,6 +21,7 @@ class Player : public GameObject{
     int laps;
     int cooldown;
     int updateValue;
+    bool tunel;
     
 public:
     
@@ -54,6 +55,7 @@ public:
     void noCheat();
     int getLaps();
     void setLaps(int n);
+    void goTunel(bool go);
 };
 
 #endif 

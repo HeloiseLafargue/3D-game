@@ -29,6 +29,7 @@ void Player::init(){
     laps = 0;
     cooldown = 0;
     updateValue = 0;
+    tunel = false;
 }
 
 void Player::update(){
@@ -40,7 +41,7 @@ void Player::update(){
     if(speed < 0) speed = 0;
     
     updateValue++;
-    if (updateValue > 1000) {
+    if (updateValue > 200) {
         updateValue = 0;
         cooldown = 0;
     }
@@ -149,11 +150,19 @@ void Player::shoot(){
         coins--;
     }
 }
+void Player::goTunel(bool go) {
+    if (go) {
+        tunel = true;
+    }
+}
 void Player::noCheat() {
-    if (cooldown == 0) {
-        setLaps(laps + 1);
-        cooldown = 1;
-    }  
+    if (tunel) {
+        if (cooldown == 0) {
+            setLaps(laps + 1);
+            cooldown = 1;
+            tunel = false;
+        }
+    }
 }
 int Player::getLaps() {
     return laps;
@@ -161,3 +170,4 @@ int Player::getLaps() {
 void Player::setLaps(int n) {
     laps = n;
 }
+
