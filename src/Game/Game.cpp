@@ -29,7 +29,7 @@ void Game::init(){
     player = new Player(this);
     player->init();
 
-    cam.setPosition(0, 300, -600);
+    cam.setPosition(0, 150, -400);
     cam.setTarget(player->transform);
     cam.setParent(player->transform);
     //cam.disableMouseInput();

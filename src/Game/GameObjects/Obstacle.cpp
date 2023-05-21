@@ -5,8 +5,13 @@
 
 Obstacle::Obstacle(Game *game, glm::vec3 pos, glm::vec3 dim):
     GameObject(game, pos, dim){
-    material.setDiffuseColor(ofColor::whiteSmoke);
-    model.loadModel("Box.obj");
+
+    model.loadModel("cone.obj");
+	model.setRotation(0, 180, 1, 0, 0);
+	model.setScale(0.25, 0.25, 0.25);
+
+	ofEnableNormalizedTexCoords();
+	ofDisableArbTex();
         
  
     
@@ -21,17 +26,11 @@ void Obstacle::update(){
 }
 
 void Obstacle::draw(){
-    transform.transformGL();
-    model.drawFaces();
     
-  //  ofDrawAxis(200);
-    transform.restoreTransformGL();
-    
-    material.begin();
-    {
-        collider->draw();
-    }
-    material.end();
+	transform.transformGL();
+	model.drawFaces();
+	transform.restoreTransformGL();
+
 }
 
 void Obstacle::receiveCarCollision(Player *car){

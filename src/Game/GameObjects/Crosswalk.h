@@ -12,7 +12,10 @@ public:
     ~Crosswalk();
     
     void draw() override;
-    
+
+	ofPlanePrimitive plano;
+
+	ofTexture texture;
 };
 
 #endif
