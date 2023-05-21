@@ -21,9 +21,13 @@ void Bombardier::draw(){
 }
 
 void Bombardier::update(){
+<<<<<<< Updated upstream
 	model.update();
     transform.rotateDeg(0 - speed, glm::vec3(0,1,0));
     //transform.rotateAroundDeg(0 - speed, glm::vec3(0,1,0), glm::vec3(0, 500, -500));
+=======
+    transform.rotateDeg(0 + speed, glm::vec3(0,1,0));
+>>>>>>> Stashed changes
 }
 
 

@@ -398,11 +398,19 @@ void GameObjectGenerator::generateWorld(){
 	game->addGameObject(panelArco);
     */
     
+<<<<<<< Updated upstream
     auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(100, 100, 100));
     game->addGameObject(bombardier);
 
 	    
     auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(50, 50, 50));
+=======
+    auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(100, 100, 100));
+    
+    game->addGameObject(bombardier);
+    
+    auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1500, 0), glm::vec3(50, 50, 50));
+>>>>>>> Stashed changes
     
     game->addGameObject(bomb);
     
