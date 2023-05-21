@@ -17,6 +17,7 @@ class Game : public StateMachine{
     bool bPlayerFinish;
     float initTime;
     float pauseTime;
+    float endTime;
     
     ofSoundPlayer scream;
 
@@ -30,7 +31,7 @@ public:
     void init();
     void update();
     void draw();
-    void finishGame();
+    void finishGame(float time);
     void toggleDebug();
     bool isFinished();
     void setFinished(bool v);
@@ -42,6 +43,7 @@ public:
     float getEllapsedTime();
     void doScream();
     void pauseTimer();
+    float getEndTime();
     
 };
 #endif

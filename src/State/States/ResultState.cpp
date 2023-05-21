@@ -25,7 +25,7 @@ void ResultState::draw(){
 	ofDrawBitmapString("End of the game", ofGetWidth() / 2 - 50, 300);
 	ofDrawBitmapString("Score", ofGetWidth() / 2 - 5, 330);
 	//verdana.drawString("Score", ofGetWidth() / 2 - 200, 330);
-	ofDrawBitmapString(score, ofGetWidth() / 2 - 10, 350);
+	ofDrawBitmapString(ofToString(game->getPlayer()->getCoins() + game->getEndTime() * 0.5, 2), ofGetWidth() / 2 - 10, 350);
 	ofDrawBitmapString("Press 'r' to try again Drift Fury", ofGetWidth() / 2 - 110, 390);
 
 };
@@ -34,6 +34,6 @@ void ResultState::next(){
     game->setState(new MenuState(game));
 };
 
-void ResultState::getScore(Game* game, Player* car) {
-	score = car->getCoins() - (game->getEllapsedTime() * 0.00001);
+void ResultState::getScore(Game* game) {
+	score = game->getPlayer()->getCoins() + game->getEndTime() * 0.5;
 }

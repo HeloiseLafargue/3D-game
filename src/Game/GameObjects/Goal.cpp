@@ -35,6 +35,7 @@ void Goal::drawDebug(){
 void  Goal::receiveCarCollision(Player *car){
     car->noCheat();
     if (car->getLaps() >= 3) {
-        game->finishGame();
+        float endTime = game->getEllapsedTime();
+        game->finishGame(endTime);
     }    
 }

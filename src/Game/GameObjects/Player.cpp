@@ -41,7 +41,7 @@ void Player::update(){
     if(speed < 0) speed = 0;
     
     updateValue++;
-    if (updateValue > 200) {
+    if (updateValue > 100) {
         updateValue = 0;
         cooldown = 0;
     }

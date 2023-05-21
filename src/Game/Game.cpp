@@ -74,8 +74,9 @@ void  Game::addGameObject(GameObject *gameobject){
     gameObjects->add(gameobject);
 }
 
-void Game::finishGame(){
+void Game::finishGame(float time){
     bPlayerFinish = true;
+    endTime = time;
 }
 
 void Game::toggleDebug(){
@@ -102,4 +103,8 @@ void Game::pauseTimer() {
     /*if (State == 'PauseState') {
         pauseTime = ofGetElapsedTimef();
     }*/
+}
+
+float Game::getEndTime() {
+    return endTime;
 }
