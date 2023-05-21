@@ -2,9 +2,9 @@
 #define Bombardier_h
 
 #include "GameObject.h"
-#include "Barrera.h"
+#include "ofxAssimpModelLoader.h"
 
-class Pedestrian;
+
 
 class Bombardier : public GameObject{
     float speed = -5;
@@ -15,6 +15,8 @@ public:
     
     void draw() override;
     void update() override;
+
+	ofxAssimpModelLoader model;
     
 };
 

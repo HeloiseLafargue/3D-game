@@ -1,25 +1,25 @@
 #include "Bomb.h"
 #include "Player.h"
-#include "Pedestrian.h"
 #include "Game.h"
 
 Bomb::Bomb(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
-    material.setEmissiveColor(ofColor::darkorange);
+	model.loadModel("bomb.obj");
+	model.setRotation(0, 180, 1, 0, 0);
+	model.setScale(0.25, 0.25, 0.25);
     speed = 1;
 }
 Bomb::~Bomb(){}
 
 void Bomb::draw(){
     
-    material.begin();
-    {
-        collider->draw();
-    }
-    material.end();
+	transform.transformGL();
+	model.drawFaces();
+	transform.restoreTransformGL();
     
 }
 
 void Bomb::update(){
+	model.update();
     transform.move(transform.getZAxis() * +speed);
     transform.move(transform.getYAxis() * -speed);
 }

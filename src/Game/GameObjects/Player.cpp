@@ -5,11 +5,11 @@
 Player::Player(Game *game):GameObject(game, glm::vec3(100)){
     
     material.setDiffuseColor(ofColor::blue);
-    model.loadModel("Humvee.obj");
+    model.loadModel("car.obj");
     model.setRotation(0, 180, 1, 0, 0);
-    model.setRotation(0, 180, 0, 0, 1);
-    model.setScale(0.45, 0.45, 0.45);
-    model.setPosition(0, -50, 0);
+    //model.setRotation(0, 180, 0, 0, 1);
+    model.setScale(0.5, 0.5, 0.5);
+    //model.setPosition(0, 0, 0);
     
     faro.setParent(transform);
     faro.setDiffuseColor(ofColor::yellow);
@@ -57,12 +57,6 @@ void Player::draw(){
         faro.enable();
     else
         faro.disable();
-    
-    material.begin();
-    {
-        collider->draw();
-    }
-    material.end();
 }
 
 void Player::drawDebug(){

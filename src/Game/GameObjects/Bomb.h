@@ -2,9 +2,8 @@
 #define Bomb_h
 
 #include "GameObject.h"
-#include "Player.h"
+#include "ofxAssimpModelLoader.h"
 
-class Pedestrian;
 
 class Bomb : public GameObject{
     float speed = -5;
@@ -17,6 +16,8 @@ public:
     void update() override;
     void checkCollisions() override;
     void receiveCarCollision(Player *car) override;
+
+	ofxAssimpModelLoader model;
     
 };
 

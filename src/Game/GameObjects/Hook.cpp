@@ -4,7 +4,7 @@
 #include "Game.h"
 
 Hook::Hook(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
-    model.loadModel("14068_Pulley_Hook_Single_Antique_v2_L2.obj");
+    model.loadModel("hook.obj");
     collider->move(800, 0, 0);
     model.setRotation(0, 90, 1, 0, 0);
     model.setPosition(800, -100, 0);
