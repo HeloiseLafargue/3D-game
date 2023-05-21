@@ -23,11 +23,12 @@ void MenuState::draw(){
 
     ofSetColor(ofColor::darkBlue);
     ofDrawRectangle(ofGetWidth() / 2 - 250, 250, 525, 190);
-    ofDrawBitmapString("3D game", ofGetWidth() / 2 - 20, 200);
+    ofDrawBitmapString("DRIFT FURY", ofGetWidth() / 2 - 20, 200);
 
     ofSetColor(ofColor::white);
     ofDrawBitmapString(name, ofGetWidth() / 2 - 40, 300);
     ofDrawBitmapString("Press any key to Start", ofGetWidth() / 2 - 80, 370);
+    ofDrawBitmapString("Press 'p' to pause", ofGetWidth() / 2 - 70, 390);
     verdana.drawString("test", ofGetWidth() / 2 - 200, 330);
 
     gui.draw();

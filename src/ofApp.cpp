@@ -1,6 +1,6 @@
 #include "ofApp.h"
 #include "MenuState.h"
-//#include "PauseState.h"
+#include "PauseState.h"
 #include "PlayState.h"
 #include "Player.h"
 
@@ -10,6 +10,7 @@ void ofApp::setup(){
     game->setState(new MenuState(game));
     ofSetFrameRate(60);
 
+    ofSetWindowTitle("Drift Fury Game");
     verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 

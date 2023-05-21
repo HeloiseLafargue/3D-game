@@ -16,6 +16,7 @@ class Game : public StateMachine{
     bool bDebug;
     bool bPlayerFinish;
     float initTime;
+    float pauseTime;
     
     ofSoundPlayer scream;
 
@@ -40,6 +41,7 @@ public:
     
     float getEllapsedTime();
     void doScream();
+    void pauseTimer();
     
 };
 #endif

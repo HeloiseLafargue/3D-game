@@ -39,6 +39,7 @@ void Game::init(){
     generator->generateWorld();
     bPlayerFinish = false;
     initTime = ofGetElapsedTimef();
+    pauseTime = 0;
 }
 
 void Game::update(){
@@ -90,9 +91,15 @@ void Game::setFinished(bool v){
 }
 
 float Game::getEllapsedTime(){
-    return ofGetElapsedTimef() - initTime;
+    return ofGetElapsedTimef() - initTime - pauseTime;
 }
 
 void Game::doScream(){
     scream.play();
+}
+
+void Game::pauseTimer() {
+    /*if (State == 'PauseState') {
+        pauseTime = ofGetElapsedTimef();
+    }*/
 }
