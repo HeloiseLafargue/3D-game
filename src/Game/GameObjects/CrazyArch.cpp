@@ -97,9 +97,11 @@ void CrazyArch::receiveCarCollision(Player *car) {
 	if (cooldown == 0) {
 		if (prize != -1) {
 			car->addCoins(prize);
+			game->doCoin();
 		}
 		else {
 			car->zeroCoins();
+			game->doObstacle();
 		}
 	
 		cooldown = 1;

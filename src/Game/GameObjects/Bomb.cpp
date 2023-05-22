@@ -46,7 +46,8 @@ void Bomb::update(){
 }
 
 void  Bomb::receiveCarCollision(Player *car){
-    car->fall();
+	game->doBomb();
+	car->fall();
 	kill();
 	game->finishGame(100000);
 }

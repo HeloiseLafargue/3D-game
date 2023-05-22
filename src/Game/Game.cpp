@@ -9,6 +9,14 @@ Game::Game(){
     generator = new GameObjectGenerator(this);
     bDebug = false;
     scream.load("aaa.wav");
+	bomb.load("bomb.flac");
+	coin.load("coin.wav");
+	obstacle.load("obstacle.flac");
+	boost.load("boost2.flac");
+	bgm.load("bgm.mp3");
+	win.load("win.mp3");
+	well.load("well.wav");
+	bullet.load("bullet.mp3");
     verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 
@@ -29,6 +37,9 @@ void Game::init(){
     
     player = new Player(this);
     player->init();
+
+	bgm.setLoop(true);
+	bgm.play();
 
     cam.setPosition(0, 150, -400);
     cam.setTarget(player->transform);
@@ -111,6 +122,32 @@ double Game::getEllapsedTime(){
 void Game::doScream(){
     scream.play();
 }
+void Game::doBomb() {
+	bomb.play();
+}
+void Game::doCoin() {
+	coin.play();
+}
+void Game::doBoost() {
+	boost.play();
+}
+
+void Game::doObstacle() {
+	obstacle.play();
+}
+void Game::doWin() {
+	win.play();
+}
+void Game::doWell() {
+	well.play();
+}
+void Game::doBullet() {
+	bullet.play();
+}
+void Game::doBgm() {
+	bgm.play();
+}
+
 
 void Game::setTimerPaused(bool paused) {
     pauseTimer = paused;

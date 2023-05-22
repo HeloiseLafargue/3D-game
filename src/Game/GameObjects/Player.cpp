@@ -148,6 +148,7 @@ void Player::shoot(){
     if (coins > 0){
         game->addGameObject(new Bullet(game, transform));
         coins--;
+		game->doBullet();
     }
 }
 void Player::goTunel(bool go) {

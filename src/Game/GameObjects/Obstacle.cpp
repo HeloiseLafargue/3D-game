@@ -9,6 +9,7 @@ Obstacle::Obstacle(Game *game, glm::vec3 pos, glm::vec3 dim):
     model.loadModel("cone.obj");
 	model.setRotation(0, 180, 1, 0, 0);
 	model.setScale(0.25, 0.25, 0.25);
+	model.setPosition(0, -50, 0);
 
 	ofEnableNormalizedTexCoords();
 	ofDisableArbTex();
@@ -35,6 +36,7 @@ void Obstacle::draw(){
 
 void Obstacle::receiveCarCollision(Player *car){
     car->brake();
+	game->doObstacle();
     kill();
 }
 

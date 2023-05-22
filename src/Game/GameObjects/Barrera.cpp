@@ -30,6 +30,7 @@ void Barrera::draw(){
 
 void  Barrera::receiveCarCollision(Player *car){
     car->stop();
+	game->doObstacle();
 }
 
 void  Barrera::receiveBulletCollision(GameObject *bullet){

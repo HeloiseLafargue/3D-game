@@ -28,6 +28,7 @@ void CraneL::update(){
 
 void  CraneL::receiveCarCollision(Player *car){
     car->stop();
+	game->doObstacle();
 }
 
 void CraneL::receivePedestrianCollision(Pedestrian *pedestrian){

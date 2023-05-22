@@ -35,6 +35,7 @@ void Boost::draw() {
 
 void Boost::receiveCarCollision(Player *car) {
 	car->boost();
+	game->doBoost();
 	kill();
 }
 
