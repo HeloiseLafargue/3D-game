@@ -353,9 +353,15 @@ void GameObjectGenerator::generateWorld(){
     
     
     auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(100, 100, 100));
+
     game->addGameObject(bombardier);
 
+<<<<<<< Updated upstream
     auto bomb = new Bomb(game,  glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(500, 500, 500));
+=======
+	    
+    auto bomb = new Bomb(game, bombardier -> getPosition(), glm::vec3(50, 50, 50));
+>>>>>>> Stashed changes
     game->addGameObject(bomb);
 
 
@@ -363,5 +369,8 @@ void GameObjectGenerator::generateWorld(){
     auto colliderLaps = new ColliderLaps(game, glm::vec3(roadPos2.x, roadPos.y, roadPos.z), glm::vec3(wallSize * 6, wallSize * 8, L / 3));
 
     game->addGameObject(colliderLaps);
+    
+    cout << bombardier << endl;
+    
     
 }

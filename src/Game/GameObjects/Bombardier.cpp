@@ -10,9 +10,15 @@ Bombardier::Bombardier(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(gam
 	model.setRotation(0, 180, 0, 0, 1);
 	model.setPosition(800, -200, -500);
 	model.setScale(1, 1, 1);
+    model.getPosition();
     speed = 0.5;
+    position = pos;
 }
 Bombardier::~Bombardier(){}
+
+void Bombardier::init(){
+    startTime = game -> getEllapsedTime();
+}
 
 void Bombardier::draw(){
 	transform.transformGL();
@@ -26,11 +32,21 @@ void Bombardier::update(){
     transform.rotateDeg(0 - speed, glm::vec3(0,1,0));
     position = transform.getPosition();
     //transform.rotateAroundDeg(0 - speed, glm::vec3(0,1,0), glm::vec3(0, 500, -500));
+<<<<<<< Updated upstream
 }
 
 void Bombardier::dropBomb(){
     auto bomb = new Bomb(game, position, glm::vec3(500, 500, 500));
     game->addGameObject(bomb);
+=======
+    FinishTime = game -> getEllapsedTime();
+    
+
+}
+
+glm::vec3 Bombardier::getPosition(){
+    return model.getPosition();
+>>>>>>> Stashed changes
 }
 
 
