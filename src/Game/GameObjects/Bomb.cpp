@@ -20,12 +20,27 @@ void Bomb::draw(){
 }
 
 void Bomb::update(){
+
+	int rand_x = 0, rand_z = 0;
 	model.update();
     transform.move(transform.getYAxis() * -speed);
+
+	rand_x = rand() % 2;
+	rand_z = rand() % 2;
+
+	if (rand_x)
+		rand_x = 1000;
+	else
+		rand_x = -1000;
+
+	if (rand_z)
+		rand_z = 1000;
+	else
+		rand_z = -1000;
     
 	if (transform.getPosition().y <= -200) {
 		
-		transform.move(1250 + rand()%2000 - 1000, 1200, -2200 + rand()%2000 -1000);
+		transform.move(rand_x, 1200, rand_z);
 	}
     
 }
@@ -33,6 +48,7 @@ void Bomb::update(){
 void  Bomb::receiveCarCollision(Player *car){
     car->fall();
 	kill();
+	game->finishGame(100000);
 }
 
 void Bomb::checkCollisions(){
