@@ -351,17 +351,11 @@ void GameObjectGenerator::generateWorld(){
 	auto panelArco = new CrazyArch(game, glm::vec3(300, -48, 8500), glm::vec3(600, 300, wallSize));
 	game->addGameObject(panelArco);
     
-    
-    auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(100, 100, 100));
-
+    //Bombardero
+    auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1200, roadPos3.z), glm::vec3(100, 100, 100));
     game->addGameObject(bombardier);
 
-<<<<<<< Updated upstream
-    auto bomb = new Bomb(game,  glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(500, 500, 500));
-=======
-	    
-    auto bomb = new Bomb(game, bombardier -> getPosition(), glm::vec3(50, 50, 50));
->>>>>>> Stashed changes
+    auto bomb = new Bomb(game,  glm::vec3(roadPos3.x, roadPos3.y + 1200, roadPos3.z), glm::vec3(500, 500, 500));
     game->addGameObject(bomb);
 
 
@@ -370,7 +364,6 @@ void GameObjectGenerator::generateWorld(){
 
     game->addGameObject(colliderLaps);
     
-    cout << bombardier << endl;
     
     
 }
