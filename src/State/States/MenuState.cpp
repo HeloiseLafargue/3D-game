@@ -37,8 +37,7 @@ void MenuState::draw(){
     ofDrawBitmapString("Press 'l' to light", ofGetWidth() / 2 - 70, 380);
     ofDrawBitmapString("Press 'space' to shot", ofGetWidth() / 2 - 80, 400);
     verdana.drawString("test", ofGetWidth() / 2 - 200, 330);
-
-    
+   
 };
 
 void MenuState::next(){

@@ -17,6 +17,4 @@ class ofApp : public ofBaseApp{
 		void keyReleased(int key);
 		
         Game *game;
-
-		ofTrueTypeFont verdana;
 };
