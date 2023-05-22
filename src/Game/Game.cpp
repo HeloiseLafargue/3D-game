@@ -9,6 +9,7 @@ Game::Game(){
     generator = new GameObjectGenerator(this);
     bDebug = false;
     scream.load("aaa.wav");
+    verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 
 Game::~Game(){

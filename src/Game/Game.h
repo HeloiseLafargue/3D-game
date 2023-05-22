@@ -24,6 +24,8 @@ class Game : public StateMachine{
     float endTime;
     
     ofSoundPlayer scream;
+    ofTrueTypeFont verdana;
+
 private : 
     bool pauseTimer;
     std::chrono::steady_clock::time_point startTime;

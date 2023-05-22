@@ -11,7 +11,6 @@ void ofApp::setup(){
     ofSetFrameRate(60);
 
     ofSetWindowTitle("Drift Fury Game");
-    verdana.load("Arial Unicode.ttf", 25, true, true);
 }
 
 ofApp::~ofApp(){
