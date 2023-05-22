@@ -6,6 +6,10 @@
 #include "GameObjectContainer.h"
 #include "GameObjectGenerator.h"
 
+#include <iostream>
+#include <chrono>
+#include <thread>
+
 class Player;
 
 class Game : public StateMachine{
@@ -20,7 +24,10 @@ class Game : public StateMachine{
     float endTime;
     
     ofSoundPlayer scream;
-
+private : 
+    bool pauseTimer;
+    std::chrono::steady_clock::time_point startTime;
+    double elapsedSeconds;
     
 public:
     int ROAD_LENGTH;
@@ -40,10 +47,11 @@ public:
     vector<GameObject *> getCollisions(GameObject *gameObject);
     void addGameObject(GameObject *gameobject);
     
-    float getEllapsedTime();
+    double getEllapsedTime();
     void doScream();
-    void pauseTimer();
     float getEndTime();
+    void setTimerPaused(bool timePaused);
+    void beginPlay();
     
 };
 #endif

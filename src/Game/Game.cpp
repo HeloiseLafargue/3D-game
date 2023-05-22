@@ -39,11 +39,23 @@ void Game::init(){
     generator->generateWorld();
     bPlayerFinish = false;
     initTime = ofGetElapsedTimef();
-    pauseTime = 0;
+
+    pauseTimer = false;
+    elapsedSeconds = 0.0;
+}
+
+void Game::beginPlay() {
+    startTime = std::chrono::steady_clock::now();
 }
 
 void Game::update(){
     gameObjects->update();
+
+    if (!pauseTimer) {
+        std::chrono::steady_clock::time_point currentTime = std::chrono::steady_clock::now();
+        std::chrono::duration<double> timeSpan = currentTime - startTime;
+        elapsedSeconds = timeSpan.count();
+    }
 }
 
 void Game::draw(){
@@ -91,18 +103,27 @@ void Game::setFinished(bool v){
     bPlayerFinish = v;
 }
 
-float Game::getEllapsedTime(){
-    return ofGetElapsedTimef() - initTime - pauseTime;
+double Game::getEllapsedTime(){
+    return elapsedSeconds;
 }
 
 void Game::doScream(){
     scream.play();
 }
 
-void Game::pauseTimer() {
-    /*if (State == 'PauseState') {
-        pauseTime = ofGetElapsedTimef();
-    }*/
+void Game::setTimerPaused(bool paused) {
+    pauseTimer = paused;
+    if (paused) {
+        // Stores the time elapsed before the timer is paused
+        std::chrono::steady_clock::time_point currentTime = std::chrono::steady_clock::now();
+        std::chrono::duration<double> timeSpan = currentTime - startTime;
+        elapsedSeconds = timeSpan.count();
+    }
+    else {
+        // Resume the timer from the previous elapsed time
+        auto newStartTime = std::chrono::steady_clock::now() - std::chrono::duration<double>(elapsedSeconds);
+        startTime = std::chrono::time_point_cast<std::chrono::steady_clock::duration>(newStartTime);
+    }
 }
 
 float Game::getEndTime() {

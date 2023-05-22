@@ -11,7 +11,8 @@ PauseState::~PauseState(){};
 
 void PauseState::update(){
 	if (ofGetKeyPressed('r')) {
-			next();
+		game->setTimerPaused(false);
+		next();
 	}
 };
 

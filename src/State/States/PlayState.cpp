@@ -1,3 +1,4 @@
+#include "Game.h"
 #include "PlayState.h"
 #include "ResultState.h"
 #include "Player.h"
@@ -19,8 +20,10 @@ void PlayState::update(){
     if(ofGetKeyPressed(OF_KEY_DOWN))
         game->getPlayer()->brake();
 
-    if (ofGetKeyPressed('p'))
+    if (ofGetKeyPressed('p')){
+        game->setTimerPaused(true);
         game->setState(new PauseState(game));
+    }
 };
     
 void PlayState::draw(){
@@ -40,8 +43,8 @@ void PlayState::draw(){
         ofTranslate(0, 20);
         ofDrawBitmapString("Coins: " + ofToString(game->getPlayer()->getCoins(), 2), 0, 0);
         ofTranslate(0, 20);
-        ofDrawBitmapString("Fps: " + ofToString(ofGetFrameRate()), 0, 0);
-        ofTranslate(0, 20);
+        //ofDrawBitmapString("Fps: " + ofToString(ofGetFrameRate()), 0, 0);
+        //ofTranslate(0, 20);
 
     }
     ofPopMatrix();

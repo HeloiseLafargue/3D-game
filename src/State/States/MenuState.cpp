@@ -15,6 +15,7 @@ void MenuState::setup() {
 }
 void MenuState::update(){
     if (ofGetKeyPressed()) {
+        game->beginPlay();
         next();
     }
 };
