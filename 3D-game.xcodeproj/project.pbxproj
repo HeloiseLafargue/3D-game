@@ -9707,6 +9707,43 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>75C3C707F25E305E80724218</key>
+			<dict>
+				<key>fileRef</key>
+				<string>5F3C4B1A69AFC9B7D3F01558</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>5F3C4B1A69AFC9B7D3F01558</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>PauseState.cpp</string>
+				<key>path</key>
+				<string>src/State/States/PauseState.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>93DA6DE88B3005D20FD56FF1</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>PauseState.h</string>
+				<key>path</key>
+				<string>src/State/States/PauseState.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>5E7B425652B307CB6B203615</key>
 			<dict>
 				<key>fileRef</key>
@@ -9767,6 +9804,8 @@
 					<string>6EAD8F6D815D2EECAB2EDB15</string>
 					<string>AAE34160531037B1DD5DA28D</string>
 					<string>A5D5AE5394C967E6E02AD86F</string>
+					<string>93DA6DE88B3005D20FD56FF1</string>
+					<string>5F3C4B1A69AFC9B7D3F01558</string>
 					<string>1BC46846A9ECEEACB49E3C00</string>
 					<string>B0B020D615EC56D571458215</string>
 				</array>
@@ -10146,6 +10185,28 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>2BF67738D0A6A4CE8E10C45F</key>
+			<dict>
+				<key>fileRef</key>
+				<string>51DB545D069D219DF1B13982</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>51DB545D069D219DF1B13982</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ColliderLaps.cpp</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/ColliderLaps.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>662CB713E8611ED47D5FF9BD</key>
 			<dict>
 				<key>fileRef</key>
@@ -10465,6 +10526,21 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>877C646255BF619CF16A0262</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ColliderLaps.h</string>
+				<key>path</key>
+				<string>src/Game/GameObjects/ColliderLaps.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>4C521CC6C0A1F3C5E0CD6EAB</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -10681,6 +10757,7 @@
 					<string>9D31C4F1080FB9A095C9CE0F</string>
 					<string>8D225527CE0031CA4DD6FE2E</string>
 					<string>4C521CC6C0A1F3C5E0CD6EAB</string>
+					<string>877C646255BF619CF16A0262</string>
 					<string>B9531549032937E923FD3F41</string>
 					<string>C7D694CA3D1F7D916A8A84C3</string>
 					<string>9282DA6582E6C3A2EE249673</string>
@@ -10699,6 +10776,7 @@
 					<string>C984C753BD337B01290F3406</string>
 					<string>0A1B8EE2924543420009DED0</string>
 					<string>51A2068B84E0CB5AAFE78AD3</string>
+					<string>51DB545D069D219DF1B13982</string>
 					<string>A5AEBC46878FA7115262D8A7</string>
 					<string>DF32FA59499E24223432AA12</string>
 					<string>6DB482E87C195C101DE057C3</string>
@@ -14178,6 +14256,7 @@ fi
 					<string>5F3DBBBEA9E898520CF96B07</string>
 					<string>3C7ED11A8F5CCB9759920A22</string>
 					<string>662CB713E8611ED47D5FF9BD</string>
+					<string>2BF67738D0A6A4CE8E10C45F</string>
 					<string>373F8BDD9AF89F0CD785283D</string>
 					<string>274B5955678A68BCD8FB86CE</string>
 					<string>B178662CD52358AF11432961</string>
@@ -14191,6 +14270,7 @@ fi
 					<string>94DCCE06DBFBCD1D2DF1BA8A</string>
 					<string>F19912B6EAA38090DE27CE6D</string>
 					<string>5E7B425652B307CB6B203615</string>
+					<string>75C3C707F25E305E80724218</string>
 					<string>ED96FD189EF3FB0C9955763A</string>
 					<string>FE06C3B0FE7A6AF0BAC97DF9</string>
 					<string>5CF480BFBD4AE142AF6D08D4</string>

@@ -355,10 +355,7 @@ void GameObjectGenerator::generateWorld(){
     auto bombardier = new Bombardier(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(100, 100, 100));
     game->addGameObject(bombardier);
 
-	    
-    auto bomb = new Bomb(game, glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(500, 500, 500));
-    
-    
+    auto bomb = new Bomb(game,  glm::vec3(roadPos3.x, roadPos3.y + 1000, roadPos3.z), glm::vec3(500, 500, 500));
     game->addGameObject(bomb);
 
 

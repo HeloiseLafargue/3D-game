@@ -8,6 +8,7 @@
 
 class Bombardier : public GameObject{
     float speed = -5;
+    glm::vec3 position;
     
 public:
     Bombardier(Game *game, glm::vec3 pos, glm::vec3 dim);
@@ -15,6 +16,7 @@ public:
     
     void draw() override;
     void update() override;
+    void dropBomb();
 
 	ofxAssimpModelLoader model;
     

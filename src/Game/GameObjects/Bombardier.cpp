@@ -1,4 +1,5 @@
 #include "Bombardier.h"
+#include "Bomb.h"
 #include "Game.h"
 
 Bombardier::Bombardier(Game *game, glm::vec3 pos, glm::vec3 dim): GameObject(game, pos, dim){
@@ -23,8 +24,13 @@ void Bombardier::draw(){
 void Bombardier::update(){
 	model.update();
     transform.rotateDeg(0 - speed, glm::vec3(0,1,0));
+    position = transform.getPosition();
     //transform.rotateAroundDeg(0 - speed, glm::vec3(0,1,0), glm::vec3(0, 500, -500));
-    transform.rotateDeg(0 + speed, glm::vec3(0,1,0));
+}
+
+void Bombardier::dropBomb(){
+    auto bomb = new Bomb(game, position, glm::vec3(500, 500, 500));
+    game->addGameObject(bomb);
 }
 
 
